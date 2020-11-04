@@ -1,0 +1,2265 @@
+﻿<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>Vehicle Registration</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../Content/WebPages/images/icon.ico" rel="shortcut icon" type="image/x-icon" />
+        <!-- Bootsrap -->
+        <link rel="stylesheet" href="../Content/WebPages/css/bootstrap.min.css">
+
+
+        <!-- Font awesome -->
+        <link rel="stylesheet" href="../Content/WebPages/css/font-awesome.min.css">
+
+        <!-- PrettyPhoto -->
+        <link rel="stylesheet" href="../Content/WebPages/css/prettyPhoto.css">
+
+        <!-- Template main Css -->
+        <link rel="stylesheet" href="../Content/WebPages/css/style.css">
+        
+        <!-- Modernizr -->
+        <script src="../Content/WebPages/js/modernizr-2.6.2.min.js"></script>
+                
+       
+       
+       <style>
+                    .loader3 {
+  margin-top:20px;
+  border: 10px solid #212529;
+  border-radius: 50%;
+  border-top: 10px solid #f05f40;
+  border-bottom: 10px solid #f05f40;
+  width: 35px;
+  height: 35px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  margin-bottom:-25px
+
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.loader4 {
+  margin-top:20px;
+  border: 10px solid #212529;
+  border-radius: 50%;
+  border-top: 10px solid #f05f40;
+  border-bottom: 10px solid #f05f40;
+  width: 35px;
+  height: 35px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  margin-bottom:-25px
+
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+            input{
+                width:400px;
+                border-radius:10px;
+                font-family:'Segoe UI Emoji';
+                border-style: inset;
+                margin-top:5px
+            }
+
+            .label1{
+                margin-top:5px
+            }
+
+            #Select1{
+                     width:400px;
+                border-radius:5px;
+                font-family:'Segoe UI Emoji';
+                border-style:groove;
+                margin-top:5px
+            }
+
+            #fileupload{
+                       width:400px;
+                border-radius:10px;
+                font-family:'Segoe UI Emoji';
+                border-style: inset;
+                margin-top:5px
+            }
+
+            .td{
+                height:50px;
+            }
+
+            #uploader{
+                -webkit-appearance:none;
+                appearance:none;
+                width: 50%;
+            }
+
+             #uploader1{
+                -webkit-appearance:none;
+                appearance:none;
+                width: 50%;
+            }
+
+              #uploader2{
+                -webkit-appearance:none;
+                appearance:none;
+                width: 50%;
+            }
+
+            .mymodal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.mymodal1 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.body{
+    background-color:white;
+    height:200px;
+    text-align:center;
+    margin-right:-20px;
+    margin-left:-20px;
+
+}
+
+.body1{
+    background-color:white;
+    height:200px;
+    text-align:center;
+    margin-right:-20px;
+    margin-left:-20px;
+
+}
+
+.btn-primary {
+  background: #f05f40;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 25px;
+  border: 1px solid transparent;
+  -moz-transition: all, 0.3s;
+  -o-transition: all, 0.3s;
+  -webkit-transition: all, 0.3s;
+  transition: all, 0.3s;
+  margin-top:20px;
+  margin-left:15px;
+  font-size:larger;
+  color:white;
+  text-align:center;
+
+}
+
+.btn-primary:hover,
+.btn-primary:focus{
+      background-color: #fff;
+  color: #f05f40;
+  border: 1px solid #f05f40;
+  cursor:pointer;
+}
+
+.head{
+    height:40px;
+    background:#212529;
+    margin-top:-20px;
+    margin-left:-20px;
+    margin-right:-20px;
+}
+
+
+.head1{
+    height:40px;
+    background:#212529;
+    margin-top:-20px;
+    margin-left:-20px;
+    margin-right:-20px;
+}
+
+/* Modal Content/Box */
+.mymodal-content {
+  background-color: #fefefe;
+  height:200px;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid black;
+  width: 35%; /* Could be more or less, depending on screen size */
+  
+}
+
+.mymodal-content1 {
+  background-color: #fefefe;
+  height:200px;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid black;
+  width: 35%; /* Could be more or less, depending on screen size */
+  
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-right:20px;
+  margin-left:20px;
+}
+
+.close1 {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-right:20px;
+  margin-left:20px;
+}
+
+.info{
+      color: #aaa;
+  float: left;
+  font-size: 28px;
+  font-weight: bold;
+    margin-right:20px;
+  margin-left:20px;
+}
+
+.info1{
+      color: #aaa;
+  float: left;
+  font-size: 28px;
+  font-weight: bold;
+    margin-right:20px;
+  margin-left:20px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close1:hover,
+.close1:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.a {
+  color: #5D6975;
+  text-decoration: underline;
+}
+
+
+.clearfix {
+  padding: 10px 0;
+  margin-bottom: 30px;
+}
+
+#logo {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#logo img {
+  width: 100px;
+}
+
+.h1 {
+  border-top: 1px solid  #5D6975;
+  border-bottom: 1px solid  #5D6975;
+  color: #5D6975;
+  font-size: 2.4em;
+  line-height: 1.4em;
+  font-weight: normal;
+  text-align: center;
+  margin: 0 0 20px 0;
+  background: url(dimension.png);
+}
+
+#project {
+  float: left;
+  font-size: medium;
+}
+
+#project span {
+  color: #5D6975;
+  text-align: right;
+  width: 52px;
+  margin-right: 10px;
+  display: inline-block;
+  font-size: 0.8em;
+}
+
+#company {
+  float: right;
+  text-align: right;
+  font-size: medium;
+}
+
+#project div,
+#company div {
+  white-space: nowrap;        
+}
+
+#tablet {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 20px;
+}
+
+
+
+#tablet tr:nth-child(2n-1) td {
+  background: none;
+}
+
+#tablet th,
+#tablet td {
+  text-align: center;
+}
+
+#tablet th {
+  padding: 5px 20px;
+  color: #5D6975;
+  border-bottom: 1px solid #C1CED9;
+  white-space: nowrap;        
+  font-weight: normal;
+}
+
+#tablet .service,
+#tablet .desc {
+  text-align: left;
+  width: 50%;
+}
+
+#tablet td {
+  padding: 20px;
+  text-align: right;
+}
+
+#tablet td.service,
+#tablet td.desc {
+  vertical-align: top;
+}
+
+#tablet td.unit,
+#tablet td.qty,
+#tablet td.total {
+  font-size: 1.2em;
+}
+
+#tablet td.grand {
+  border-top: 1px solid #5D6975;;
+}
+
+#notices .notice {
+  color: #5D6975;
+  font-size: 1.2em;
+}
+
+
+        </style>
+
+    </head>
+<body>
+    <!-- NAVBAR
+    ================================================== -->
+
+    <header class="main-header">
+ 
+
+        <nav class="navbar navbar-static-top">
+
+            <div class="navbar-top" style="background:#212529; height:40px;">
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-sm-6 col-xs-12" style="float:left; margin-top:7px; font-size:15px; margin-left:-10px;">
+                            <ul class="list-unstyled list-inline header-contact">
+                                <li><a href="HomePage.html" style="font-size:medium; font-weight:bold; color:white; font-family:'Segoe UI';">KACE VEHICLE REGISTRATION SYSTEM</></a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-6 col-xs-12 text-right" style="margin-top:7px; font-size:15px; float:left">
+                            <ul id="sign" class="list-unstyled list-inline header-social">
+
+                                <li> <a href="Registration.html">Sign Up |</a> </li>
+                                <li> <a href="Login.html">| Login </a> </li>
+
+                            </ul> <!-- /.header-social  -->
+                            <ul id="sign1" class="list-unstyled list-inline header-social">
+                                <li>Signed in as: <input type="text" style="border:none; width:210px; background:rgba(33, 37, 41, 0.00); color:white;" id="info" /></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="navbar-main" style="background:white; color:#212529;">
+
+                <div class="container">
+
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" style="background-color:#212529;">
+
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+
+                        </button>
+
+                        <a class="navbar-brand" style="margin-left:10px;" href="HomePage.html"><img src="../Content/WebPages/images/mainlogo.png" style="width:90px; height:60px;" alt=""></a>
+
+                    </div>
+
+                    <div id="navbar" class="navbar-collapse collapse pull-right">
+
+                        <ul class="nav-items nav navbar-nav">
+
+                            <li><a class="is-active" href="HomePage.html">HOME</a></li>
+
+                            <li class="has-child">
+                                <a href="Services.html">SERVICES</a>
+
+                                <ul class="submenu" style="background:white;">
+                                    <li class="submenu-item"><a href="VehicleRegistration.html" id="regi">Vehicle Registration</a></li>
+                                    <li class="submenu-item"><a href="RoadworthyRegistration.html">Roadworthy Registration</a></li>
+                                  
+                                    <li class="submenu-item last"><a href="VehicleService.html">Vehicle Servicing</a></li>
+                                </ul>
+
+                            </li>
+                            
+                            <li><a href="about.html">ABOUT</a></li>
+                            <li><a href="contact.html">CONTACT</a></li>
+                            <li onclick="logout()" style="margin-left:40px" id="usericon">
+                                <div><span style="float:left;"><img style="width:30px; margin-top:15px; margin-left:5px;" src="../Content/WebPages/images/icons/user.png" /></span><span style="margin-left:10px; margin-top:15px; float:left; font-size:large;"><a>Sign Out</a></span></div>
+                            </li>
+                        </ul>
+
+                    </div> <!-- /#navbar -->
+
+                </div> <!-- /.container -->
+
+            </div> <!-- /.navbar-main -->
+
+
+        </nav>
+
+    </header> <!-- /. main-header -->
+
+
+
+    <div class="page-heading text-left">
+
+        <div class="container zoomIn animated">
+
+            <h1 id ="vreghead" class="page-title" style="color:#212529;">VEHICLE REGISTRATION<span class="title-under"></span></h1>
+            <p class="page-description">
+                Welcome. Scroll down to start your vehicle registration process.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="main-container">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-5 fadeIn animated" style="font-size:medium;">
+
+                    <h2 class="title-style-2"> Steps to register your vehicle<span class="title-under" style="width:500px"></span></h2>
+
+                    <p>
+                        <ul style="list-style-type:disc; font-size:medium;">
+                            <li>Take your vehicle to CEPS for certification of vehicle documents.</li>
+                            <li>Take your vehicle to a private garage for inspection. eg. Kim</li>
+                            <li>Upload CEPS documents and other required documents.</li>
+
+                            <li>Fill all forms and provide any required information.</li>
+                            <li>An invoice will be generated with details of your transaction</li>
+                            <li>Finalize Registration.</li>
+                            <li>Load Receipt and Proof of registration and present for collection of registration plate.</li>
+                            <li>Payment will be made at our accounts office</li>
+                            <li>Any errors made during registration will be rectified</li>
+                        </ul>
+                    </p>
+
+                </div>
+
+                <div class="col-md-6 col-md-offset-1 fadeIn animated" style="margin-top:100px;">
+
+                    <div id="cause-carousel" class="carousel slide cause-carousel" data-ride="carousel">
+
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#cause-carousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#cause-carousel" data-slide-to="1"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+
+                            <div class="item active">
+
+                                <img src="../Content/WebPages/images/causes/slider/cause-slider-1.jpg" alt="">
+
+                            </div>
+
+                            <div class="item">
+
+                                <img src="../Content/WebPages/images/causes/slider/cause-slider-2.jpg" alt="">
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class = "row">
+                    <button type="submit" class="btn btn-primary pull-right" id="dreceipt">Download Receipt</button>
+            </div>
+
+
+            <div class="row fadeIn animated" style="font-size:medium; margin-top:70px">
+                <h2 style="text-align:center; padding:30px;">Standard Rate for Registration of Vehicles<span class="title-under"></span></h2>
+                <div class="col-md-6">
+                    <h2 class="title-style-2"> Vehicles<span class="title-under" style="margin-left:0px"></span></h2>
+
+                    <p>
+                        <ul>
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">Motor Cycle (Up to 200CC)</li>
+
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">Motor Cycle (Above 200CC)/Tricycle</li>
+
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">Motor Vehicle (Up to 2000CC)</li>
+
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">Motor Vehicle (Above 2000CC)</li>
+
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">Buses and Coaches</li>
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">Rigid Cargo Truck (Up to 16 Tons)</li>
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">Rigid Cargo Truck (16 - 22 Tons)</li>
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">Rigid Cargo Truck (Above 22 Tons)</li>
+
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">Rigid Cargo Truck (Above 24 Tons)</li>
+
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">Articulated Trucks (Up to 24 Tons)</li>
+
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">Articulated Trucks (24 - 32 Tons)</li>
+
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">Articulated Trucks (Above 32 Tons)</li>
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">Articulated Trucks (Tipper)</li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="col-md-2">
+
+                    <h2 class="title-style-2"> Private<span class="title-under"></span></h2>
+
+                    <p>
+                        <ul>
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">GH₵116.00</li>
+
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">GH₵140.00</li>
+
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">GH₵429.50</li>
+
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">GH₵544.00</li>
+
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">GH₵494.00</li>
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">GH₵534.00</li>
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">GH₵554.00</li>
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">GH₵604.00</li>
+
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">GH₵604.00</li>
+
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">GH₵886.50</li>
+
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">GH₵886.50</li>
+
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">GH₵886.50</li>
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">GH₵826.50</li>
+                        </ul>
+                    </p>
+
+                </div>
+
+                <div class="col-md-2">
+
+                    <h2 class="title-style-2">Commercial <span class="title-under"></span></h2>
+
+                    <p>
+                        <ul>
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">GH₵116.00</li>
+
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">GH₵140.00</li>
+
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">GH₵419.50</li>
+
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">GH₵524.00</li>
+
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">GH₵479.00</li>
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">GH₵524.00</li>
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">GH₵539.00</li>
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">GH₵574.00</li>
+
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">GH₵574.00</li>
+
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">GH₵796.50</li>
+
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">GH₵796.50</li>
+
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">GH₵796.50</li>
+                            <li style="margin-bottom:20px; border-bottom:1px solid #212529; padding-bottom:20px">GH₵756.50</li>
+                        </ul>
+                    </p>
+
+                </div>
+
+
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-12 fadeIn animate-onscroll">
+
+                    <h2 style="margin-top:50px" class="title-style-2"> Tabs <span class="title-under"></span></h2>
+
+
+                    <div role="tabpanel">
+
+                        <!-- Nav tabs -->
+                        
+                        <!-- Tab panes -->
+                        <div class="tab-content" style="margin-top:50px;">
+                            
+                            <div id="myModal" class="mymodal">
+
+                                <!-- Modal content -->
+                                <div class="mymodal-content">
+                                    <div class="head">
+                                        <span class="info">
+                                            <input type="text" id="infor" style="border:none; font-size:large;
+ width:100%; background:#212529; color: white;" readonly />
+                                        </span>
+                                        <span class="close">&times;</span>
+                                    </div>
+                                    <div align="center" class="body">
+                                        <input style="margin-top:50px; margin-bottom:20px; width:100%; text-align:center;
+                                       border:none; font-size:large; color: #212529;" id="text" type="text" readonly /><br />
+                                        <input class="btn btn-primary" id="close" type="button" value="Continue" />
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div role="tabpanel" class="tab-pane active" id="documents">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" id="doctab" class="active"><a aria-controls="documents" role="tab">STEP 1</a></li>
+                                    <li role="presentation" id="hometab"><a aria-controls="home" role="tab" >STEP 2</a></li>
+                                    <li role="presentation" id="protab"><a  aria-controls="profile" role="tab">STEP 3 </a></li>
+                                    <li role="presentation" id="messtab"><a  aria-controls="messages" role="tab">STEP 4</a></li>
+                                    <li role="presentation" id="paytab"><a aria-controls="payment" role="tab" >STEP 5</a></li>
+                                    <li role="presentation" id="finaltab"><a aria-controls="final" role="tab" >STEP 6</a></li>
+                                    <li role="presentation" id="rectab"><a aria-controls="receipt" role="tab" >STEP 7</a></li>
+                                </ul>
+
+                                <div id="donateModal" tabindex="-1" aria-labelledby="donateModalLabel">
+
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+
+                                                <h4 class="modal-title" id="donateModalLabel">SUBMIT REQUIRED DOCUMENTS</h4>
+                                            </div>
+                                            <div class="modal-body">
+
+                                                <div class="form-donation">
+
+                                                    <h3 class="title-style-1 text-center">Please provide the documents from CEPS and the private garage. <span class="title-under"></span> </h3>
+
+                                                    <div class="row" style="margin-top:20px" >
+                                                        <div class="form-group col-md-2">
+                                                            <label style="font-weight:normal; font-size:medium;">Ceps Document: </label>
+                                                        </div>
+                                                        <div class="form-group col-md-8">
+                                                            <input type="file" class="form-control" value="CEPS DOCUMENT" id="ceps" placeholder="CEPS Document" required>
+                                                            
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="row" align="center" style="margin-top:15px;">
+                                                        <progress style="margin-top:25px" value="0" max="100" id="uploader">0%</progress>
+                                                    </div>
+
+                                                    <div class="row" style="margin-top:100px">
+                                                        <div class="form-group col-md-2">
+                                                            <label style="font-weight:normal; font-size:medium;">Garage Document: </label>
+                                                        </div>
+                                                        <div class="form-group col-md-8">
+                                                            <input type="file" class="form-control" id="garage" placeholder="Private Garage Document" required>
+                                                           
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="row" align="center" style="margin-top:15px;">
+                                                        <progress style="margin-top:25px" value="0" max="100" id="uploader1">0%</progress>
+                                                      </div>
+                                                        <div class="row" align="center" style="margin-top:15px; font-size:medium">
+
+                                                            <p>Note: You cant proceed untill all documents are successfully uploaded</p>
+                                                          
+                                                          <a href="#home" id="homenext" aria-controls="home" role="tab" data-toggle="tab" class="btn btn-primary">Next &raquo;</a>
+                                                        
+
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+
+
+                            <div role="tabpanel" class="tab-pane" id="home">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" id="doctab"><a aria-controls="documents" role="tab">STEP 1</a></li>
+                                    <li role="presentation" id="hometab" class="active"><a aria-controls="home" role="tab" >STEP 2</a></li>
+                                    <li role="presentation" id="protab"><a  aria-controls="profile" role="tab">STEP 3 </a></li>
+                                    <li role="presentation" id="messtab"><a  aria-controls="messages" role="tab">STEP 4</a></li>
+                                    <li role="presentation" id="paytab"><a aria-controls="payment" role="tab" >STEP 5</a></li>
+                                    <li role="presentation" id="finaltab"><a aria-controls="final" role="tab" >STEP 6</a></li>
+                                    <li role="presentation" id="rectab"><a aria-controls="receipt" role="tab" >STEP 7</a></li>
+                                </ul>
+
+                                <!-- Donate Modal -->
+                                <div id="donateModal" tabindex="-1" aria-labelledby="donateModalLabel">
+
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+
+                                                <h4 class="modal-title" id="donateModalLabel">PERSONAL INFORMATION</h4>
+                                            </div>
+                                            <div class="modal-body">
+
+                                                <form id="form1" class="form-donation">
+
+                                                    <h3 class="title-style-1 text-center">Please provide the vehicle owner's information<span class="title-under"></span> </h3>
+
+                                                    <div class="row">
+
+                                                        <div class="form-group col-md-12 ">
+                                                            <input type="text" class="form-control" id="fullname" placeholder="Full Name of Owner(s)" required>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="form-group col-md-6">
+                                                            <input type="text" class="form-control" id="work" placeholder="Place of Work">
+                                                        </div>
+
+                                                        <div class="form-group col-md-6">
+                                                            <input type="text" class="form-control" id="resaddress" placeholder="Residential Address" required>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+
+                                                        <div class="form-group col-md-6">
+                                                            <input type="text" class="form-control" id="phone" placeholder="Phone" required>
+                                                        </div>
+
+                                                        <div class="form-group col-md-6">
+                                                            <input type="text" class="form-control" id="email" placeholder="Email" required>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="row">
+
+                                                        <div class="form-group col-md-6">
+                                                            <select class="form-control" id="idtype" placeholder="-Select One-" required>
+                                                                <option disabled selected>ID Type -Select One-</option>
+                                                                <option>Passport</option>
+                                                                <option>Voter's ID</option>
+                                                                <option>NHIS</option>
+                                                                <option>Driver's License</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="form-group col-md-6">
+                                                            <input type="text" class="form-control" id="idnumber" placeholder="ID Number" required>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class=" = form-group col-md-4" style="margin-top:20px">
+                                                            <label style="font-weight:normal; font-size:medium;">Passport Sized Image:</label>
+                                                        </div>
+                                                        <div class="form-group col-md-8">
+                                                            <input type="file" class="form-control" id="passport" accept="image/jpeg, image/png" placeholder="Passport Size Image" required>
+                                                            <progress style="margin-top:15px" value="0" max="100" id="uploader2">0%</progress>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="row" align="center">
+                                                        <img id="preimg" src="#" />
+
+                                                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+                                                            function readURL(input) {
+
+                                                                if (input.files && input.files[0]) {
+                                                                    var reader = new FileReader();
+
+                                                                    reader.onload = function (e) {
+                                                                        $('#preimg').attr('src', e.target.result);
+                                                                    }
+
+                                                                    reader.readAsDataURL(input.files[0]);
+                                                                }
+                                                            }
+
+                                                            $("#passport").change(function () {
+                                                                readURL(this);
+                                                            });
+                                                        </script>
+                                                    </div>
+
+                                                    <div class="row" align="center">
+                                                        
+                                                        <a href="#profile" id="profilenext" aria-controls="profile" role="tab" data-toggle="tab" class="btn btn-primary">Next &raquo;</a>
+                                                    </div>
+
+
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div> <!-- /.modal -->
+                            </div>
+
+                            <div role="tabpanel" class="tab-pane" id="profile">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" id="doctab"><a aria-controls="documents" role="tab">STEP 1</a></li>
+                                    <li role="presentation" id="hometab"><a aria-controls="home" role="tab" >STEP 2</a></li>
+                                    <li role="presentation" id="protab" class="active"><a  aria-controls="profile" role="tab">STEP 3 </a></li>
+                                    <li role="presentation" id="messtab"><a  aria-controls="messages" role="tab">STEP 4</a></li>
+                                    <li role="presentation" id="paytab"><a aria-controls="payment" role="tab" >STEP 5</a></li>
+                                    <li role="presentation" id="finaltab"><a aria-controls="final" role="tab" >STEP 6</a></li>
+                                    <li role="presentation" id="rectab"><a aria-controls="receipt" role="tab" >STEP 7</a></li>
+                                </ul>
+
+                                <!-- Donate Modal -->
+                                <div id="donateModal" tabindex="-1" aria-labelledby="donateModalLabel">
+
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+
+                                                <h4 class="modal-title" id="donateModalLabel">VEHICLE INFORMATION</h4>
+                                            </div>
+                                            <div class="modal-body">
+
+                                                <form id="form1" class="form-donation">
+
+                                                    <h3 class="title-style-1 text-center">Please provide the vehicle's information<span class="title-under"></span> </h3>
+
+                                                    <div class="row">
+
+                                                        <div class="form-group col-md-6 ">
+                                                            <input type="text" class="form-control" id="chnumber" placeholder="Chassis Number" required>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                                                                                       
+                                                                <select class="form-control" id="year" placeholder="-Select One-" required>
+                                                                    <option disabled selected value="">-- Year of Manufacture --</option>
+                                                                    <option value="2019">2019</option>
+                                                                    <option value="2018">2018</option>
+                                                                    <option value="2017">2017</option>
+                                                                    <option value="2016">2016</option>
+                                                                    <option value="2015">2015</option>
+                                                                    <option value="2014">2014</option>
+                                                                    <option value="2013">2013</option>
+                                                                    <option value="2012">2012</option>
+                                                                    <option value="2011">2011</option>
+                                                                    <option value="2010">2010</option>
+                                                                    <option value="2009">2009</option>
+                                                                    <option value="2008">2008</option>
+                                                                    <option value="2007">2007</option>
+                                                                    <option value="2006">2006</option>
+                                                                    <option value="2005">2005</option>
+                                                                    <option value="2004">2004</option>
+                                                                    <option value="2003">2003</option>
+                                                                    <option value="2002">2002</option>
+                                                                    <option value="2001">2001</option>
+                                                                    <option value="2000">2000</option>
+                                                                    <option value="1999">1999</option>
+                                                                    <option value="1998">1998</option>
+                                                                    <option value="1997">1997</option>
+                                                                    <option value="1996">1996</option>
+                                                                    <option value="1995">1995</option>
+                                                                    <option value="1994">1994</option>
+                                                                    <option value="1993">1993</option>
+                                                                    <option value="1992">1992</option>
+                                                                    <option value="1991">1991</option>
+                                                                    <option value="1990">1990</option>
+
+                                                                </select>
+                                                         
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="form-group col-md-6">
+                                                            <select class="form-control" id="build" onchange="var element = document.getElementById('textbuild'); if (this.value=='other'){element.style.display='block'}else {element.style.display='none'};" required>
+                                                                <option disabled selected>-- Select a Vehicle Brand --</option> 
+                                                                <option>Acura</option>
+                                                                 <option>Alfa Romeo</option>
+                                                                 <option>Aston Martin</option>
+                                                                 <option>Audi</option>
+                                                                 <option>Bentley</option>
+                                                                 <option>BMW</option>
+                                                                 <option>Bugatti</option>
+                                                                 <option>Buick</option>
+                                                                 <option>Cadillac</option>
+                                                                 <option>Chevrolet</option>
+                                                                 <option>Chrysler</option>
+                                                                 <option>Citroen</option>
+                                                                 <option>Dodge</option>
+                                                                 <option>Ferrari</option>
+                                                                 <option>Fiat</option>
+                                                                 <option>Ford</option>
+                                                                 <option>Geely</option>
+                                                                 <option>General Motors</option>
+                                                                 <option>GMC</option>
+                                                                 <option>Honda</option>
+                                                                 <option>Hyundai</option>
+                                                                 <option>Infiniti</option>
+                                                                 <option>Jaguar</option>
+                                                                 <option>Jeep</option>
+                                                                 <option>Kia Motors</option>
+                                                                <option>Koenigsegg</option>
+                                                                 <option>Lamborghini</option>
+                                                                 <option>Land Rover</option>
+                                                                 <option>Lexus</option>
+                                                                 <option>Maserati</option>
+                                                                 <option>Mazda</option>
+                                                                 <option>McLaren</option>
+                                                                 <option>Mercedes Benz</option>
+                                                                 <option>Mini</option>
+                                                                 <option>Mitsubishi Motors</option>
+                                                                 <option>Nissan</option>
+                                                                <option>Pagani</option>
+                                                                 <option>Peugeot</option>
+                                                                 <option>Porsche</option>
+                                                                <option>Ram</option>
+                                                                 <option>Renault</option>
+                                                                 <option>Rolls Royce</option>
+                                                                <option>Saab</option>
+                                                                 <option>Subaru</option>
+                                                                 <option>Suzuki</option>
+                                                                <option>TATA Motors</option>
+                                                                 <option>Tesla Motors</option>
+                                                                 <option>Toyota</option>
+                                                                 <option>Volkswagen</option>
+                                                                 <option>Volvo</option>
+                                                                 <option value="other">Other</option>
+                                                                
+                                                            </select>
+                                                            <input type="text" class="form-control" style="display:none;" id="textbuild" name="buildtext" placeholder="Input your brand" required>
+                                                            </div>
+                                                        <div class="form-group col-md-6">
+                                                            <input type="text" class="form-control" id="model" placeholder="Model Name/Number" required>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+
+                                                        <div class="form-group col-md-6">
+                                                            <select class="form-control" id="type" placeholder="Body Type" required>
+                                                                    <option disabled selected>-- Vehicle Type --</option>
+                                                            <option>Motor Cycle (Up to 200CC)</option>
+ <option>Motor Cycle (Above 200CC)/Tricycle</option>
+ <option>Motor Vehicle (Up to 2000CC)</option>
+ <option>Motor Vehicle (Above 2000CC)</option>
+ <option>Buses and Coaches</option>
+ <option>Rigid Cargo Truck (Up to 16 Tons)</option>
+ <option>Rigid Cargo Truck (16 - 22 Tons)</option>
+ <option>Rigid Cargo Truck (Above 22 Tons)</option>
+ <option>Rigid Cargo Truck (Above 24 Tons)</option>
+ <option>Articulated Trucks (Up to 24 Tons)</option>
+ <option>Articulated Trucks (24 - 32 Tons)</option>
+ <option>Articulated Trucks (Above 32 Tons)</option>
+ <option>Articulated Trucks (Tipper)</option>
+                                                    </select>
+                                                        </div>
+
+                                                        <div class="form-group col-md-6">
+                                                            <select class="form-control" id="vrcolour" placeholder="Colour(s)" required>
+                                                                <option disabled selected>-- Vehicle Colour --</option> 
+	 <option value="">Amber</option>
+	<option value="">Aqua</option> 
+	 <option value="">Aquamarine</option>
+	 <option value="">Black</option>
+	 <option value="">Blue</option>
+	<option value="">Blue Green</option> 
+	 <option value="">Blue Violet</option>
+	 <option value="">Bondi Blue</option>
+	 <option value="">Brass</option>
+	 <option value="">Bronze</option>
+<option value="">Brown</option>	 
+<option value="">Buff</option>	 
+<option value="">Burgundy</option>	 
+	<option value="">Burnt Orange</option> 
+	<option value="">Burnt Sienna</option> 
+	 <option value="">Burnt Umber</option>
+	<option value="">Camouflage Green</option> 
+	 <option value="">Caput Mortuum</option> 
+     <option value="">Carrot orange</option>
+     <option value="">Champagne</option>	 
+	 <option value="">Charcoal</option>	 
+	 <option value="">Cherry Blossom Pink</option>	 
+	 <option value="">Chocolate</option>	 
+<option value="">Cobalt</option>	 
+<option value="">Copper</option>	 
+<option value="">Coral</option>	 
+	 <option value="">Corn</option>	 
+	<option value="">Cream</option> 
+	<option value="">Crimson</option> 
+	 <option value="">Cyan</option>
+	<option value="">Dandelion</option> 
+	 	 <option value="">Denim</option>
+	 	 <option value="">Emerald</option>
+	 <option value="">Falu red</option>
+	 <option value="">Fern green</option>
+	 <option value="">Forest green</option>
+	 <option value="">French Rose</option>	 
+	 <option value="">Gold</option>
+	 <option value="">Goldenrod</option>
+	 <option value="">Green</option>
+	 <option value="">Grey</option>
+	<option value="">Han Purple</option> 
+	 <option value="">Indigo</option>
+	 <option value="">Ivory</option>
+	 <option value="">Jade</option>
+	 <option value="">Kelly green</option>
+	 <option value="">Khaki</option>
+	 <option value="">Lavender</option>
+	 <option value="">Lawn green</option>
+	 <option value="">Lemon</option>
+	 <option value="">Lemon chiffon</option>
+	 <option value="">Lilac</option>
+	 <option value="">Lime</option>
+	 <option value="">Lime green</option>
+	 <option value="">Linen</option>
+	 <option value="">Magenta</option> 
+	 <option value="">Maroon</option>
+	 <option value="">Mauve</option>
+	 <option value="">Midnight Blue</option>
+	 <option value="">Mint green</option>
+	 <option value="">Misty rose</option>
+	 <option value="">Moss green</option>
+	 <option value="">Mustard</option> 
+	 <option value="">Navy Blue</option>
+	 <option value="">Office green</option>
+	 <option value="">Olive</option>
+	 <option value="">Orange</option>
+	 <option value="">Orchid</option>
+	 <option value="">Peach</option>
+	 <option value="">Pear</option>
+	 <option value="">Pine Green</option>
+	 <option value="">Pink</option>
+<option value="">Platinum</option>
+  <option value="">Powder blue	</option>
+	 <option value="">Psychedelic purple</option>
+	 <option value="">Purple</option>
+	<option value="">Quartz Grey</option> 
+	 	 <option value="">Red</option>
+	 <option value="">Rose</option>
+	 <option value="">Royal blue</option>
+	 <option value="">Royal purple</option>
+	  <option value="">Ruby</option>
+	 <option value="">Rust</option>
+	 <option value="">Safety orange</option> 
+	 <option value="">Sandy brown</option>
+	 <option value="">Sapphire</option>
+	 <option value="">Scarlet</option>
+ <option value="">School bus yellow	</option>
+	 <option value="">Sea Green</option>
+	 <option value="">Seashell</option>
+	 <option value="">Sepia</option>
+	 <option value="">Shamrock green</option>
+	 <option value="">Shocking Pink</option>
+	 <option value="">Silver</option>
+	 <option value="">Sky Blue</option>
+	 <option value="">Slate grey</option>
+	 <option value="">Spring green</option>
+	 <option value="">Steel blue</option>
+	 <option value="">Tan</option>
+	 <option value="">Tangerine</option>
+	 <option value="">Titanium White</option>
+	 <option value="">Tomato</option>
+	 <option value="">Turquoise</option>
+	 <option value="">Tyrian purple</option>
+	 <option value="">Violet</option>
+	 <option value="">Wheat</option>
+	 <option value="">White</option>
+	 <option value="">Yellow</option>
+                                                       </select>
+                                                            </div>
+
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="form-group col-md-6">
+                                                            <select class="form-control" id="country" placeholder="" required>
+                                                                    <option disabled selected>-- Country of Importation --</option>
+                                                                            <option value="Afghanistan">Afghanistan</option>
+                                                                            <option value="Åland Islands">Åland Islands</option>
+                                                                            <option value="Albania">Albania</option>
+                                                                            <option value="Algeria">Algeria</option>
+                                                                            <option value="American Samoa">American Samoa</option>
+                                                                            <option value="Andorra">Andorra</option>
+                                                                            <option value="Angola">Angola</option>
+                                                                            <option value="Anguilla">Anguilla</option>
+                                                                            <option value="Antarctica">Antarctica</option>
+                                                                            <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                                                                            <option value="Argentina">Argentina</option>
+                                                                            <option value="Armenia">Armenia</option>
+                                                                            <option value="Aruba">Aruba</option>
+                                                                            <option value="Australia">Australia</option>
+                                                                            <option value="Austria">Austria</option>
+                                                                            <option value="Azerbaijan">Azerbaijan</option>
+                                                                            <option value="Bahamas">Bahamas</option>
+                                                                            <option value="Bahrain">Bahrain</option>
+                                                                            <option value="Bangladesh">Bangladesh</option>
+                                                                            <option value="Barbados">Barbados</option>
+                                                                            <option value="Belarus">Belarus</option>
+                                                                            <option value="Belgium">Belgium</option>
+                                                                            <option value="Belize">Belize</option>
+                                                                            <option value="Benin">Benin</option>
+                                                                            <option value="Bermuda">Bermuda</option>
+                                                                            <option value="Bhutan">Bhutan</option>
+                                                                            <option value="Bolivia">Bolivia</option>
+                                                                            <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                                                                            <option value="Botswana">Botswana</option>
+                                                                            <option value="Bouvet Island">Bouvet Island</option>
+                                                                            <option value="Brazil">Brazil</option>
+                                                                            <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+                                                                            <option value="Brunei Darussalam">Brunei Darussalam</option>
+                                                                            <option value="Bulgaria">Bulgaria</option>
+                                                                            <option value="Burkina Faso">Burkina Faso</option>
+                                                                            <option value="Burundi">Burundi</option>
+                                                                            <option value="Cambodia">Cambodia</option>
+                                                                            <option value="Cameroon">Cameroon</option>
+                                                                            <option value="Canada">Canada</option>
+                                                                            <option value="Cape Verde">Cape Verde</option>
+                                                                            <option value="Cayman Islands">Cayman Islands</option>
+                                                                            <option value="Central African Republic">Central African Republic</option>
+                                                                            <option value="Chad">Chad</option>
+                                                                            <option value="Chile">Chile</option>
+                                                                            <option value="China">China</option>
+                                                                            <option value="Christmas Island">Christmas Island</option>
+                                                                            <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+                                                                            <option value="Colombia">Colombia</option>
+                                                                            <option value="Comoros">Comoros</option>
+                                                                            <option value="Congo">Congo</option>
+                                                                            <option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
+                                                                            <option value="Cook Islands">Cook Islands</option>
+                                                                            <option value="Costa Rica">Costa Rica</option>
+                                                                            <option value="Cote D'ivoire">Cote D'ivoire</option>
+                                                                            <option value="Croatia">Croatia</option>
+                                                                            <option value="Cuba">Cuba</option>
+                                                                            <option value="Cyprus">Cyprus</option>
+                                                                            <option value="Czech Republic">Czech Republic</option>
+                                                                            <option value="Denmark">Denmark</option>
+                                                                            <option value="Djibouti">Djibouti</option>
+                                                                            <option value="Dominica">Dominica</option>
+                                                                            <option value="Dominican Republic">Dominican Republic</option>
+                                                                            <option value="Ecuador">Ecuador</option>
+                                                                            <option value="Egypt">Egypt</option>
+                                                                            <option value="El Salvador">El Salvador</option>
+                                                                            <option value="Equatorial Guinea">Equatorial Guinea</option>
+                                                                            <option value="Eritrea">Eritrea</option>
+                                                                            <option value="Estonia">Estonia</option>
+                                                                            <option value="Ethiopia">Ethiopia</option>
+                                                                            <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+                                                                            <option value="Faroe Islands">Faroe Islands</option>
+                                                                            <option value="Fiji">Fiji</option>
+                                                                            <option value="Finland">Finland</option>
+                                                                            <option value="France">France</option>
+                                                                            <option value="French Guiana">French Guiana</option>
+                                                                            <option value="French Polynesia">French Polynesia</option>
+                                                                            <option value="French Southern Territories">French Southern Territories</option>
+                                                                            <option value="Gabon">Gabon</option>
+                                                                            <option value="Gambia">Gambia</option>
+                                                                            <option value="Georgia">Georgia</option>
+                                                                            <option value="Germany">Germany</option>
+                                                                            <option value="Ghana">Ghana</option>
+                                                                            <option value="Gibraltar">Gibraltar</option>
+                                                                            <option value="Greece">Greece</option>
+                                                                            <option value="Greenland">Greenland</option>
+                                                                            <option value="Grenada">Grenada</option>
+                                                                            <option value="Guadeloupe">Guadeloupe</option>
+                                                                            <option value="Guam">Guam</option>
+                                                                            <option value="Guatemala">Guatemala</option>
+                                                                            <option value="Guernsey">Guernsey</option>
+                                                                            <option value="Guinea">Guinea</option>
+                                                                            <option value="Guinea-bissau">Guinea-bissau</option>
+                                                                            <option value="Guyana">Guyana</option>
+                                                                            <option value="Haiti">Haiti</option>
+                                                                            <option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
+                                                                            <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+                                                                            <option value="Honduras">Honduras</option>
+                                                                            <option value="Hong Kong">Hong Kong</option>
+                                                                            <option value="Hungary">Hungary</option>
+                                                                            <option value="Iceland">Iceland</option>
+                                                                            <option value="India">India</option>
+                                                                            <option value="Indonesia">Indonesia</option>
+                                                                            <option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
+                                                                            <option value="Iraq">Iraq</option>
+                                                                            <option value="Ireland">Ireland</option>
+                                                                            <option value="Isle of Man">Isle of Man</option>
+                                                                            <option value="Israel">Israel</option>
+                                                                            <option value="Italy">Italy</option>
+                                                                            <option value="Jamaica">Jamaica</option>
+                                                                            <option value="Japan">Japan</option>
+                                                                            <option value="Jersey">Jersey</option>
+                                                                            <option value="Jordan">Jordan</option>
+                                                                            <option value="Kazakhstan">Kazakhstan</option>
+                                                                            <option value="Kenya">Kenya</option>
+                                                                            <option value="Kiribati">Kiribati</option>
+                                                                            <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+                                                                            <option value="Korea, Republic of">Korea, Republic of</option>
+                                                                            <option value="Kuwait">Kuwait</option>
+                                                                            <option value="Kyrgyzstan">Kyrgyzstan</option>
+                                                                            <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+                                                                            <option value="Latvia">Latvia</option>
+                                                                            <option value="Lebanon">Lebanon</option>
+                                                                            <option value="Lesotho">Lesotho</option>
+                                                                            <option value="Liberia">Liberia</option>
+                                                                            <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+                                                                            <option value="Liechtenstein">Liechtenstein</option>
+                                                                            <option value="Lithuania">Lithuania</option>
+                                                                            <option value="Luxembourg">Luxembourg</option>
+                                                                            <option value="Macao">Macao</option>
+                                                                            <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
+                                                                            <option value="Madagascar">Madagascar</option>
+                                                                            <option value="Malawi">Malawi</option>
+                                                                            <option value="Malaysia">Malaysia</option>
+                                                                            <option value="Maldives">Maldives</option>
+                                                                            <option value="Mali">Mali</option>
+                                                                            <option value="Malta">Malta</option>
+                                                                            <option value="Marshall Islands">Marshall Islands</option>
+                                                                            <option value="Martinique">Martinique</option>
+                                                                            <option value="Mauritania">Mauritania</option>
+                                                                            <option value="Mauritius">Mauritius</option>
+                                                                            <option value="Mayotte">Mayotte</option>
+                                                                            <option value="Mexico">Mexico</option>
+                                                                            <option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
+                                                                            <option value="Moldova, Republic of">Moldova, Republic of</option>
+                                                                            <option value="Monaco">Monaco</option>
+                                                                            <option value="Mongolia">Mongolia</option>
+                                                                            <option value="Montenegro">Montenegro</option>
+                                                                            <option value="Montserrat">Montserrat</option>
+                                                                            <option value="Morocco">Morocco</option>
+                                                                            <option value="Mozambique">Mozambique</option>
+                                                                            <option value="Myanmar">Myanmar</option>
+                                                                            <option value="Namibia">Namibia</option>
+                                                                            <option value="Nauru">Nauru</option>
+                                                                            <option value="Nepal">Nepal</option>
+                                                                            <option value="Netherlands">Netherlands</option>
+                                                                            <option value="Netherlands Antilles">Netherlands Antilles</option>
+                                                                            <option value="New Caledonia">New Caledonia</option>
+                                                                            <option value="New Zealand">New Zealand</option>
+                                                                            <option value="Nicaragua">Nicaragua</option>
+                                                                            <option value="Niger">Niger</option>
+                                                                            <option value="Nigeria">Nigeria</option>
+                                                                            <option value="Niue">Niue</option>
+                                                                            <option value="Norfolk Island">Norfolk Island</option>
+                                                                            <option value="Northern Mariana Islands">Northern Mariana Islands</option>
+                                                                            <option value="Norway">Norway</option>
+                                                                            <option value="Oman">Oman</option>
+                                                                            <option value="Pakistan">Pakistan</option>
+                                                                            <option value="Palau">Palau</option>
+                                                                            <option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
+                                                                            <option value="Panama">Panama</option>
+                                                                            <option value="Papua New Guinea">Papua New Guinea</option>
+                                                                            <option value="Paraguay">Paraguay</option>
+                                                                            <option value="Peru">Peru</option>
+                                                                            <option value="Philippines">Philippines</option>
+                                                                            <option value="Pitcairn">Pitcairn</option>
+                                                                            <option value="Poland">Poland</option>
+                                                                            <option value="Portugal">Portugal</option>
+                                                                            <option value="Puerto Rico">Puerto Rico</option>
+                                                                            <option value="Qatar">Qatar</option>
+                                                                            <option value="Reunion">Reunion</option>
+                                                                            <option value="Romania">Romania</option>
+                                                                            <option value="Russian Federation">Russian Federation</option>
+                                                                            <option value="Rwanda">Rwanda</option>
+                                                                            <option value="Saint Helena">Saint Helena</option>
+                                                                            <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                                                                            <option value="Saint Lucia">Saint Lucia</option>
+                                                                            <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+                                                                            <option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
+                                                                            <option value="Samoa">Samoa</option>
+                                                                            <option value="San Marino">San Marino</option>
+                                                                            <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                                                                            <option value="Saudi Arabia">Saudi Arabia</option>
+                                                                            <option value="Senegal">Senegal</option>
+                                                                            <option value="Serbia">Serbia</option>
+                                                                            <option value="Seychelles">Seychelles</option>
+                                                                            <option value="Sierra Leone">Sierra Leone</option>
+                                                                            <option value="Singapore">Singapore</option>
+                                                                            <option value="Slovakia">Slovakia</option>
+                                                                            <option value="Slovenia">Slovenia</option>
+                                                                            <option value="Solomon Islands">Solomon Islands</option>
+                                                                            <option value="Somalia">Somalia</option>
+                                                                            <option value="South Africa">South Africa</option>
+                                                                            <option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich Islands</option>
+                                                                            <option value="Spain">Spain</option>
+                                                                            <option value="Sri Lanka">Sri Lanka</option>
+                                                                            <option value="Sudan">Sudan</option>
+                                                                            <option value="Suriname">Suriname</option>
+                                                                            <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+                                                                            <option value="Swaziland">Swaziland</option>
+                                                                            <option value="Sweden">Sweden</option>
+                                                                            <option value="Switzerland">Switzerland</option>
+                                                                            <option value="Syrian Arab Republic">Syrian Arab Republic</option>
+                                                                            <option value="Taiwan, Province of China">Taiwan, Province of China</option>
+                                                                            <option value="Tajikistan">Tajikistan</option>
+                                                                            <option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+                                                                            <option value="Thailand">Thailand</option>
+                                                                            <option value="Timor-leste">Timor-leste</option>
+                                                                            <option value="Togo">Togo</option>
+                                                                            <option value="Tokelau">Tokelau</option>
+                                                                            <option value="Tonga">Tonga</option>
+                                                                            <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                                                                            <option value="Tunisia">Tunisia</option>
+                                                                            <option value="Turkey">Turkey</option>
+                                                                            <option value="Turkmenistan">Turkmenistan</option>
+                                                                            <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+                                                                            <option value="Tuvalu">Tuvalu</option>
+                                                                            <option value="Uganda">Uganda</option>
+                                                                            <option value="Ukraine">Ukraine</option>
+                                                                            <option value="United Arab Emirates">United Arab Emirates</option>
+                                                                            <option value="United Kingdom">United Kingdom</option>
+                                                                            <option value="United States">United States</option>
+                                                                            <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+                                                                            <option value="Uruguay">Uruguay</option>
+                                                                            <option value="Uzbekistan">Uzbekistan</option>
+                                                                            <option value="Vanuatu">Vanuatu</option>
+                                                                            <option value="Venezuela">Venezuela</option>
+                                                                            <option value="VietNam">VietNam</option>
+                                                                            <option value="Virgin Islands, British">Virgin Islands, British</option>
+                                                                            <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+                                                                            <option value="Wallis and Futuna">Wallis and Futuna</option>
+                                                                            <option value="Western Sahara">Western Sahara</option>
+                                                                            <option value="Yemen">Yemen</option>
+                                                                            <option value="Zambia">Zambia</option>
+                                                                            <option value="Zimbabwe">Zimbabwe</option>
+                                                                        </select>
+                                                            </div>
+                                                        <div class="form-group col-md-6">
+                                                            <select class="form-control" id="use" placeholder="" required>
+                                                                    <option disabled selected>-- Vehicle Use --</option>
+                                                                    <option>Private</option>
+                                                                    <option>Commercial</option>
+                                                                   
+                                                                </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="form-group col-md-4">
+                                                            <input type="text" class="form-control" id="width" placeholder="Width(mm)" required>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <input type="text" class="form-control" id="length" placeholder="Length(mm)" required>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <input type="text" class="form-control" id="height" placeholder="Height(mm)" required>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12">
+                                                            <select class="form-control" id="vraxles" placeholder="Axles Number" required>
+                                                                <option value="" disabled selected>-- Number of Axles --</option>
+                                                                <option>2</option>
+                                                                <option>3</option>
+                                                                <option>4</option>
+                                                                <option>5</option>
+                                                                <option>6</option>
+                                                                <option>7</option>
+                                                                <option>8</option>
+                                                                <option>9</option>
+                                                                <option>10</option>
+                                                                <option>12</option>
+                                                                <option>13</option>
+                                                                <option>14</option>
+                                                                <option>17</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="form-group col-md-12">
+                                                            <select class="form-control" id="tyres" placeholder="Number of Wheels" required>
+                                                            <option value="" disabled selected>-- Number of Wheels --</option> 
+                                                            <option value="">2</option>
+                                                            <option value="3">3</option> 
+                                                            <option value="4">4</option> 
+                                                            <option value="6">6</option> 
+                                                            <option value="">8</option>
+                                                            <option value="">10</option>
+                                                            <option value="">12</option>
+                                                            <option value="">14</option>
+                                                            <option value="">16</option>
+                                                            <option value="">18</option>
+                                                            <option value="">20</option>
+                                                            <option value="">24</option>
+                                                            <option value="">26</option>
+                                                            <option value="">28</option>
+                                                            <option value="">34</option>
+                                                            </select>
+                                                        </div> 
+                           
+                                                    </div>
+                                                    <div class="row">
+
+                                                        <div class="form-group col-md-12">
+                                                                <div align="center">
+                                                                        <div id="loader3" style="display:none;" class="loader3"></div>
+                                                                    </div>
+                                                            <button type="submit" class="btn btn-primary pull-right" id="submitinfo" onclick="VehicleReg()">SUBMIT</button>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="row" align="center">
+                                                        <a href="#home" aria-controls="home" role="tab" id="homeprev" data-toggle="tab" class="btn btn-primary">&laquo; Previous</a>
+                                                        <a href="#messages" aria-controls="messages" id="nextmess" role="tab" data-toggle="tab" class="btn btn-primary">Next &raquo;</a>
+                                                    </div>
+
+
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div> <!-- /.modal -->
+                            </div>
+
+
+
+                            <div role="tabpanel" class="tab-pane" id="messages">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" id="doctab"><a aria-controls="documents" role="tab">STEP 1</a></li>
+                                    <li role="presentation" id="hometab"><a aria-controls="home" role="tab" >STEP 2</a></li>
+                                    <li role="presentation" id="protab"><a  aria-controls="profile" role="tab">STEP 3 </a></li>
+                                    <li role="presentation" id="messtab" class="active"><a  aria-controls="messages" role="tab">STEP 4</a></li>
+                                    <li role="presentation" id="paytab"><a aria-controls="payment" role="tab" >STEP 5</a></li>
+                                    <li role="presentation" id="finaltab"><a aria-controls="final" role="tab" >STEP 6</a></li>
+                                    <li role="presentation" id="rectab"><a aria-controls="receipt" role="tab" >STEP 7</a></li>
+                                </ul>
+
+                                <!-- Donate Modal -->
+                                <div id="donateModal" tabindex="-1" aria-labelledby="donateModalLabel">
+
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+
+                                                <h4 class="modal-title" id="donateModalLabel">PREVIEW</h4>
+                                            </div>
+                                            <div class="modal-body">
+
+                                                <form class="form-donation">
+
+                                                    <h3 class="title-style-1 text-center">Please check to make sure the right information has been provided<span class="title-under"></span> </h3>
+                                                    <h3 class="title-style-1 text-center" style="color: red">Note: You will no be able to return after you move from this page</h3>
+                                                    <h4 style="font-weight:bold">Owner's Information</h4>
+
+                                                    <div class="row">
+
+                                                        <div class="form-group col-md-3 ">
+                                                            <label style="font-weight:normal; margin-top:10px;">Full Name:</label>
+                                                        </div>
+                                                        <div class="form-group col-md-9">
+                                                            <input type="text" class="form-control" id="prename" placeholder="" readonly>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="form-group col-md-3 ">
+                                                            <label style="font-weight:normal; margin-top:10px;">Place of Work:</label>
+                                                        </div>
+                                                        <div class="form-group col-md-9">
+                                                            <input type="text" class="form-control" id="prework" placeholder="" readonly>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+
+                                                        <div class="form-group col-md-3">
+                                                            <label style="font-weight:normal; margin-top:10px;">Residential Address:</label>
+                                                        </div>
+                                                        <div class="form-group col-md-9">
+                                                            <input type="text" class="form-control" id="preres" placeholder="" readonly>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="form-group col-md-3 ">
+                                                            <label style="font-weight:normal; margin-top:10px;">Phone:</label>
+                                                        </div>
+                                                        <div class="form-group col-md-9">
+                                                            <input type="text" class="form-control" id="prephone" placeholder="" readonly>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="form-group col-md-3 ">
+                                                            <label style="font-weight:normal; margin-top:10px;">Email:</label>
+                                                        </div>
+                                                        <div class="form-group col-md-9">
+                                                            <input type="text" class="form-control" id="preemail" placeholder="" readonly>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="form-group col-md-3 ">
+                                                            <label style="font-weight:normal; margin-top:10px;">ID Type:</label>
+                                                        </div>
+                                                        <div class="form-group col-md-9">
+                                                            <input type="text" class="form-control" id="preidtype" placeholder="" readonly>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="form-group col-md-3 ">
+                                                            <label style="font-weight:normal; margin-top:10px;">ID Number:</label>
+                                                        </div>
+                                                        <div class="form-group col-md-9">
+                                                            <input type="text" class="form-control" id="preidno" placeholder="" readonly>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <h4 style="font-weight:bold;">Vehicle's Information</h4>
+
+                                                    <div class="row">
+                                                        <div class="form-group col-md-3 ">
+                                                            <label style="font-weight:normal; margin-top:10px;">Chassis Number:</label>
+                                                        </div>
+                                                        <div class="form-group col-md-9">
+                                                            <input type="text" class="form-control" id="prechno" placeholder="" readonly>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="form-group col-md-3 ">
+                                                            <label style="font-weight:normal; margin-top:10px;">Year of Manufacture:</label>
+                                                        </div>
+                                                        <div class="form-group col-md-9">
+                                                            <input type="text" class="form-control" id="preyear" placeholder="" readonly>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="form-group col-md-3 ">
+                                                            <label style="font-weight:normal; margin-top:10px;">Vehicle Make:</label>
+                                                        </div>
+                                                        <div class="form-group col-md-9">
+                                                            <input type="text" class="form-control" id="premake" placeholder="" readonly>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="form-group col-md-3 ">
+                                                            <label style="font-weight:normal; margin-top:10px;">Model Name:</label>
+                                                        </div>
+                                                        <div class="form-group col-md-9">
+                                                            <input type="text" class="form-control" id="premodel" placeholder="" readonly>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="form-group col-md-3 ">
+                                                            <label style="font-weight:normal; margin-top:10px;">Body Type:</label>
+                                                        </div>
+                                                        <div class="form-group col-md-9">
+                                                            <input type="text" class="form-control" id="prebod" placeholder="" readonly>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="form-group col-md-3 ">
+                                                            <label style="font-weight:normal; margin-top:10px;">Colour(s):</label>
+                                                        </div>
+                                                        <div class="form-group col-md-9">
+                                                            <input type="text" class="form-control" id="precolour" placeholder="" readonly>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="form-group col-md-3 ">
+                                                            <label style="font-weight:normal; margin-top:10px;">Country of Importation:</label>
+                                                        </div>
+                                                        <div class="form-group col-md-9">
+                                                            <input type="text" class="form-control" id="precountry" placeholder="" readonly>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="form-group col-md-3 ">
+                                                            <label style="font-weight:normal; margin-top:10px;">Vehicle Use:</label>
+                                                        </div>
+                                                        <div class="form-group col-md-9">
+                                                            <input type="text" class="form-control" id="preuse" placeholder="" readonly>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="form-group col-md-1">
+                                                            <label style="font-weight:normal; margin-top:10px;">Width(M):</label>
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                            <input type="text" class="form-control" id="prewidth" placeholder="" readonly>
+                                                        </div>
+                                                        <div class="form-group col-md-1">
+                                                            <label style="font-weight:normal; margin-top:10px;">Length(M):</label>
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                            <input type="text" class="form-control" id="prelength" placeholder="" readonly>
+                                                        </div>
+                                                        <div class="form-group col-md-1">
+                                                            <label style="font-weight:normal; margin-top:10px;">Height(M):</label>
+                                                        </div>
+                                                        <div class="form-group col-md-3">
+                                                            <input type="text" class="form-control" id="preheight" placeholder="" readonly>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="form-group col-md-2">
+                                                            <label style="font-weight:normal; margin-top:10px;">Number of Tyres:</label>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <input type="text" class="form-control" id="pretyres" placeholder="" readonly>
+                                                        </div>
+                                                        <div class="form-group col-md-2">
+                                                            <label style="font-weight:normal; margin-top:10px;">Number of Axles:</label>
+                                                        </div>
+                                                        <div class="form-group col-md-4">
+                                                            <input type="text" class="form-control" id="preaxles" placeholder="" readonly>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="row" align="center">
+                                                        <a href="#profile" aria-controls="profile" id="proprev" role="tab" data-toggle="tab" class="btn btn-primary">&laquo; Previous</a>
+                                                        <a href="#payment" aria-controls="payment" role="tab" id="paynext" data-toggle="tab" class="btn btn-primary">Next &raquo;</a>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div> <!-- /.modal -->
+
+                            </div>
+
+
+
+                            
+                            <div role="tabpanel" class="tab-pane" id="payment">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" id="doctab"><a aria-controls="documents" role="tab">STEP 1</a></li>
+                                    <li role="presentation" id="hometab"><a aria-controls="home" role="tab" >STEP 2</a></li>
+                                    <li role="presentation" id="protab"><a  aria-controls="profile" role="tab">STEP 3 </a></li>
+                                    <li role="presentation" id="messtab"><a  aria-controls="messages" role="tab">STEP 4</a></li>
+                                    <li role="presentation" id="paytab" class="active"><a aria-controls="payment" role="tab" >STEP 5</a></li>
+                                    <li role="presentation" id="finaltab"><a aria-controls="final" role="tab" >STEP 6</a></li>
+                                    <li role="presentation" id="rectab"><a aria-controls="receipt" role="tab" >STEP 7</a></li>
+                                </ul>
+
+                                <div id="donateModal" tabindex="-1" aria-labelledby="donateModalLabel">
+
+
+                                        <div id="myModal1" class="mymodal1">
+                                                  
+                                                <!-- Modal content -->
+                                                <div class="mymodal-content1">
+                                                    <div class="head1">
+                                                        <span class="info1">
+                                                            <input type="text" id="infor1" style="border:none; font-size:large;
+                                    width:100%; background:#212529; color: white;" readonly />
+                                                        </span>
+                                                        <span class="close1">&times;</span>
+                                                    </div>
+                                                    <div align="center" class="body">
+                                                        <input style="margin-top:50px; margin-bottom:20px; width:100%; text-align:center;
+                                                       border:none; font-size:large; color: #212529;" id="text1" type="text" readonly /><br />
+                                                       <div align="center">
+                                                            <div id="loader4" style="display:none;" class="loader4"></div>
+                                                        </div>
+                                                        <input class="btn btn-primary" id="close1" type="button" value="Continue" />
+                                                    </div>
+                                                </div>
+                                    
+                                            </div>
+
+
+
+
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+
+                                                <h4 class="modal-title" id="donateModalLabel">INVOICE</h4>
+                                            </div>
+                                            <div class="modal-body">
+
+                                                <div class="form-donation">
+
+                                                    <h3 class="title-style-1 text-center">Details of payment<span class="title-under"></span> </h3>
+                                                  
+
+                
+                                                    <div align="center">
+                                                        <h4 class="title-style-1 text-center" style="margin-top:60px; margin-bottom: -15px; font-size: medium ">Transaction</h4>
+                                                        <hr style="background-color:#212529; height: 1px; width:85%" /> 
+                                                    <div class="row" style="width:80%; margin-top:20px; margin-bottom: -20px; ">
+                                                            <div class="form-group col-md-6"> 
+                                                               <label style="font-weight:normal; margin-top:10px; font-size: medium" >Transaction ID</label> 
+                                                        </div>    
+                                                        <div class="form-group col-md-6"> 
+                                                                <input class="form-control" style="border:none" type="text" id=uniqueid readonly />
+                                                         </div> 
+                                                    </div>         
+                                                    <hr style="background-color:#212529; height: 1px; width:85%;"/>  
+                                                    
+                                                    <div class="row" style="width:80%; margin-bottom: -20px; ">
+                                                            <div class="form-group col-md-6"> 
+                                                               <label style="font-weight:normal; margin-top:10px; font-size: medium" >Vehicle Type</label> 
+                                                        </div>    
+                                                        <div class="form-group col-md-6"> 
+                                                                <input class="form-control" style="border:none" type="text" id=paytype readonly />
+                                                         </div> 
+                                                    </div>         
+                                                    <hr style="background-color:#212529; height: 1px; width:85%; "/>   
+                                                    
+                                                    <div class="row" style="width:80%; margin-bottom: -20px; ">
+                                                            <div class="form-group col-md-6"> 
+                                                               <label style="font-weight:normal; margin-top:10px; font-size: medium" >Vehicle Use</label> 
+                                                        </div>    
+                                                        <div class="form-group col-md-6"> 
+                                                                <input class="form-control" style="border:none" type="text" id=payuse readonly />
+                                                         </div> 
+                                                    </div>         
+                                                    <hr style="background-color:#212529; height: 1px; width:85%; " />                                        
+
+                                                    <div class="row" style="width:80%; margin-bottom: -20px; ">
+                                                            <div class="form-group col-md-6"> 
+                                                               <label style="font-weight:normal; margin-top:10px; font-size: medium" >Amount to be Paid</label> 
+                                                        </div>    
+                                                        <div class="form-group col-md-6"> 
+                                                                <input class="form-control" style="border:none" type="text" id="amount" readonly />
+                                                         </div> 
+                                                    </div>         
+                                                    <hr style="background-color:#212529; height: 1px; width:85%;"  />    
+                                                    
+                                                    
+                                                    </div>
+                                                    <div class="row" align="center">
+                                                        
+                                                        <a href="#final" aria-controls="final" id="finnext" role="tab" data-toggle="tab" class="btn btn-primary">Next &raquo;</a>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div role="tabpanel" class="tab-pane" id="final">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" id="doctab"><a aria-controls="documents" role="tab">STEP 1</a></li>
+                                    <li role="presentation" id="hometab"><a aria-controls="home" role="tab" >STEP 2</a></li>
+                                    <li role="presentation" id="protab"><a  aria-controls="profile" role="tab">STEP 3 </a></li>
+                                    <li role="presentation" id="messtab"><a  aria-controls="messages" role="tab">STEP 4</a></li>
+                                    <li role="presentation" id="paytab"><a aria-controls="payment" role="tab" >STEP 5</a></li>
+                                    <li role="presentation" id="finaltab" class="active"><a aria-controls="final" role="tab" >STEP 6</a></li>
+                                    <li role="presentation" id="rectab"><a aria-controls="receipt" role="tab" >STEP 7</a></li>
+                                </ul>
+
+                                <div id="donateModal" tabindex="-1" aria-labelledby="donateModalLabel">
+
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+
+                                                <h4 class="modal-title" id="donateModalLabel">FINALIZE REGISTRATION</h4>
+                                            </div>
+                                            <div class="modal-body">
+
+                                                <div class="form-donation">
+
+                                                    <h3 class="title-style-1 text-center">Satisfied with your registration?<span class="title-under"></span> </h3>
+                                                        <div class = "row" >
+                                                            <ul width="80%">
+                                                            <li  style="font-size:medium">Your number plate will be ready by tomorrow. Please report to our office on the KNUST campus with your vehicle.</li>
+                                                        <li style="font-size:medium">If you are satisfied with your registration, click finalize to complete your registration.</li>
+                                                        <li style="font-size:medium">Click next to generate your receipt and proof of registration.</li>
+                                                        <li style="font-size:medium">This document must be presented when coming for your number plate as it will be used to identify you.</li>
+                                                        <li style="font-size:medium">Thank you for choosing us!</li>
+                                                            </ul>
+                                                    </div>
+
+                                                    <div class="row">
+                                                            <div class="form-group col-md-12">
+                                                                    <button type="submit" class="btn btn-primary pull-right" id="fin" onclick="finalize()">Finalize</button>
+                                                                </div>
+                                                    </div>
+
+                                                    <div class="row" align="center">
+                                                        <a href="#payment" aria-controls="payment" id="payprev" role="tab" data-toggle="tab" class="btn btn-primary">&laquo; Previous</a>
+                                                        <a href="#receipt" aria-controls="receipt" id="recnext" role="tab" data-toggle="tab" class="btn btn-primary">Next &raquo;</a>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                            
+                            <div role="tabpanel" class="tab-pane" id="receipt">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" id="doctab"><a aria-controls="documents" role="tab">STEP 1</a></li>
+                                    <li role="presentation" id="hometab"><a aria-controls="home" role="tab" >STEP 2</a></li>
+                                    <li role="presentation" id="protab"><a  aria-controls="profile" role="tab">STEP 3 </a></li>
+                                    <li role="presentation" id="messtab"><a  aria-controls="messages" role="tab">STEP 4</a></li>
+                                    <li role="presentation" id="paytab"><a aria-controls="payment" role="tab" >STEP 5</a></li>
+                                    <li role="presentation" id="finaltab"><a aria-controls="final" role="tab" >STEP 6</a></li>
+                                    <li role="presentation" id="rectab" class="active"><a aria-controls="receipt" role="tab" >STEP 7</a></li>
+                                </ul>
+
+                                <div id="donateModal" tabindex="-1" aria-labelledby="donateModalLabel">
+
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+
+                                                <h4 class="modal-title" id="donateModalLabel">RECEIPT</h4>
+                                            </div>
+                                            <div class="modal-body">
+
+                                                <div id = "receiptform" class="form-donation">
+
+                                                    <div id = "logo">
+                                                        <img src = "../Content/WebPages/images/mainlogo.png"/>
+                                                    </div>
+
+                                                    <header class="clearfix">
+                                                     
+                                                        <h1 class = "h1">RECEIPT AND PROOF OF REGISTRATION</h1>
+                                                        <div id="company" style="font-size:medium; font-family:'Segoe UI Emoji';" class="clearfix">
+                                                          <div>Kace Vehicle Services</div>
+                                                          <div>KNUST, Kumasi.</div>
+                                                          <div>+233 20 843 9020</div>
+                                                          <div><a class="a" href="mailto:koseiwusu1@gmail.com">koseiwusu1@gmail.com</a></div>
+                                                        </div>
+                                                        <div id="project" style="font-size:medium; font-family:'Segoe UI Emoji';">
+                                                          <div><span style="font-size:medium; font-family:'Segoe UI Emoji';">SERVICE: </span> <input style="font-size:medium; font-family:'Segoe UI Emoji'; width: 100%; margin-left: 15px; border:none;" readonly type="text" id="rservice"></div>
+                                                          <div><span style="font-size:medium; font-family:'Segoe UI Emoji';">CLIENT:</span><input style="font-size:medium; font-family:'Segoe UI Emoji'; width: 100%;  margin-left: 15px; border:none;" readonly type="text" id="rclient"></div>
+                                                          <div><span style="font-size:medium; font-family:'Segoe UI Emoji';">ADDRESS:</span><input style="font-size:medium; font-family:'Segoe UI Emoji'; width: 100%; margin-left: 15px; border:none;" readonly type="text" id="raddress"></div>
+                                                          <div><span style="font-size:medium; font-family:'Segoe UI Emoji';">EMAIL:</span> <input style="font-size:medium; font-family:'Segoe UI Emoji'; width: 100%; margin-left: 15px; border:none;" readonly type="text" id="remail" ></div>
+                                                          <div><span style="font-size:medium; font-family:'Segoe UI Emoji';">USER ID:</span> <input style="font-size:medium; font-family:'Segoe UI Emoji'; width: 100%; margin-left: 15px; border:none;" readonly type="text" id="rid" ></div>
+                                                          <div><span style="font-size:medium; font-family:'Segoe UI Emoji';">DATE:</span> <input style="font-size:medium; font-family:'Segoe UI Emoji'; width: 100%; margin-left: 15px; border:none;" readonly type="text" id="rdate" ></div>
+                                                          
+                                                        </div>
+                                                      </header>
+                                                      <main>
+                                                  
+                                                              
+                                                          <div id="myModal" class="mymodal">
+                                                  
+                                                              <!-- Modal content -->
+                                                              <div class="mymodal-content">
+                                                                  <div class="head">
+                                                                      <span class="info">
+                                                                          <input type="text" id="infor" style="border:none; font-size:large;
+                                                  width:100%; background:#212529; color: white;" readonly />
+                                                                      </span>
+                                                                      <span class="close">&times;</span>
+                                                                  </div>
+                                                                  <div align="center" class="body">
+                                                                      <input style="margin-top:50px; margin-bottom:20px; width:100%; text-align:center;
+                                                                     border:none; font-size:large; color: #212529;" id="text" type="text" readonly /><br />
+                                                                      <input class="btn btn-primary" id="close" type="button" value="Continue" />
+                                                                  </div>
+                                                              </div>
+                                                  
+                                                          </div>
+                                                         
+                                                          <div align="center">
+                                                              <h3 style="font-family:'Segoe UI Emoji'; font-weight:normal; font-size:x-large; margin-top: 50px;">REGISTRATION DETAILS</h3>
+                                                          </div>
+                                                  
+                                                          <div align="center">
+                                                        <table id="tablet" style="  font-family:'Segoe UI Emoji'; font-weight:normal; font-size:medium;">
+                                                       
+                                                          <tbody>
+                                                            <tr>
+                                                              <td class="service" style="width: 50%;">Vehicle Brand</td>
+                                                              <td class="desc" style="width: 50%"><input style="font-size:medium; background: none; font-family:'Segoe UI Emoji'; border:none; width:100%" readonly type="text" id="rbrand"></td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td style="width: 50%;" class="service">Vehicle Model</td>
+                                                              <td style="width: 50%;" class="desc"><input style="font-size:medium; background: none; font-family:'Segoe UI Emoji'; border:none; width:100%" readonly type="text" id="rmodel"></td>
+                                                           
+                                                            </tr>
+                                                            <tr>
+                                                              <td class="service">Vehicle Type</td>
+                                                              <td class="desc"><input style="font-size:medium; font-family:'Segoe UI Emoji'; background: none; border:none; width:100%" readonly type="text" id="rtype"></td>
+                                                             
+                                                            </tr>
+                                                            <tr>
+                                                              <td class="service">Vehicle Use</td>
+                                                              <td class="desc"><input id="ruse" style="font-size:medium; font-family:'Segoe UI Emoji'; background: none; border:none; width:100%" readonly type="text" ></td>
+                                                          
+                                                            </tr>
+                                                  
+                                                            <tr>
+                                                                  <td class="service">Transaction ID</td>
+                                                                  <td class="desc"><input id="rtrans" style="font-size:medium; font-family:'Segoe UI Emoji'; background: none; border:none; width:100%" readonly type="text" ></td>
+                                                              
+                                                                </tr>
+                                                  
+                                                                <tr>
+                                                                      <td class="service">Amount to Pay</td>
+                                                                      <td class="desc"><input id="ramount" style="font-size:medium; font-family:'Segoe UI Emoji'; background: none; border:none; width:100%" readonly type="text" ></td>
+                                                                  
+                                                                    </tr>
+                                                          </tbody>
+                                                        </table>
+                                                        <div style="margin-top:80px; font-family:'Segoe UI Emoji'; font-weight:normal; font-size:medium;" id="notices">
+                                                          <div>NOTICE:</div>
+                                                          <div style="color:red" class="notice">This document must be presented on the day of collection of your number plate.</div>
+                                                          <div style="color:red" class="notice">We reserve the right to refuse any customer who does not present this document.</div>
+                                                      </div>
+                                                      </div>
+                                                      </main>
+                                                        <div id="downdiv" align = "center" style="margin-top:20px" class="row">
+                                                          <div class="form-group col-md-12">
+                                                                  <button type="submit" class="btn btn-primary pull-right" id="load" >Load</button>
+                                                              </div>
+                                                  </div>
+                                                  
+                                                
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                
+                            </div>
+
+                        </div>
+
+                        <p></p>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div> <!-- /.main-container  -->
+
+
+    <footer class="main-footer">
+
+        <div class="footer-top">
+
+        </div>
+
+
+        <div class="footer-main">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-4">
+
+                        <div class="footer-col">
+
+                            <h4 class="footer-title">About us <span class="title-under"></span></h4>
+
+                            <div class="footer-content">
+
+                                <p>
+                                    <strong>Kace</strong> is an organization setup in the Kwame Nkrumah University of Science and Technology to offer many different vehicle related services. We are easy to access and our services are the best.
+                                </p>
+
+                                <p style="margin-top:30px">
+                                    We sacrifice a lot to give you the best because you are our most valuable asset. Thank you for working with us!<br /><span style="float:right; margin-top:10px">- Klubi Grace, CEO</span>
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="footer-col">
+
+                            <h4 class="footer-title">RECENT NEWS <span class="title-under"></span></h4>
+
+                            <div class="footer-content">
+                                <ul class="tweets list-unstyled">
+                                    <li class="tweet">
+                                        Parliament has passed the Special Petroleum Tax Amendment Bill to reduce the tax from 15% to 13%. The amendment comes after recent protests against the rising cost of fuel as well as calls from the Minority in Parliament.
+
+                                    </li>
+
+                                    <li class="tweet">
+                                        Accra has launched its first ever Road Safety Strategy as parts of efforts to reduce road traffic deaths and injuries in the city. The strategy which spans from 2018 until 2030 was developed in collaboration with Bloomberg Philanthropies Initiative for Global Road Safety (BIGRS) and SSATP African Transport Policy Programme.
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-4">
+
+                        <div class="footer-col">
+
+                            <h4 class="footer-title">Contact us <span class="title-under"></span></h4>
+
+                            <div class="footer-content">
+
+                                <div class="footer-form">
+
+                                    <div class="footer-form">
+
+                                        <form action="../Content/WebPages/php/mail.php" class="ajax-form">
+
+                                            <div class="form-group">
+                                                <input type="text" name="name" class="form-control" placeholder="Name" required>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="email" name="email" class="form-control" placeholder="E-mail" required>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <textarea name="message" class="form-control" placeholder="Message" required></textarea>
+                                            </div>
+
+                                            <div class="form-group alerts">
+
+                                                <div class="alert alert-success" role="alert">
+
+                                                </div>
+
+                                                <div class="alert alert-danger" role="alert">
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-submit pull-right">Send message</button>
+                                            </div>
+
+                                        </form>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="clearfix"></div>
+
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <div class="container text-right">
+                Developed by Grace Klubi and Kevin Osei-Wusu, 2018
+            </div>
+        </div>
+
+    </footer> <!-- main-footer -->
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-functions.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDCdXPXLOEWGsmB3RKNy-UExIPFlZgwrzE",
+            authDomain: "kace-vehicle-services2.firebaseapp.com",
+            databaseURL: "https://kace-vehicle-services2.firebaseio.com",
+            projectId: "kace-vehicle-services2",
+            storageBucket: "kace-vehicle-services2.appspot.com",
+            messagingSenderId: "784228930105"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <script src="../Content/WebPages/js/jquery-1.11.1.min.js"></script>
+    <script src="../Content/WebPages/js/myscript.js"></script>
+    <script src="../Content/WebPages/js/myscript2.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            initApp();
+            checkuser1();
+            checkdata();
+        };
+    </script>
+
+    
+
+    <!-- jQuery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../Content/WebPages/js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Bootsrap javascript file -->
+    <script src="../Content/WebPages/js/bootstrap.min.js"></script>
+
+    <!-- PrettyPhoto javascript file -->
+    <script src="../Content/WebPages/js/jquery.prettyPhoto.js"></script>
+
+
+
+    <!-- Google map  -->
+    <script src="http://maps.google.com/maps/api/js?sensor=false&amp;libraries=places" type="text/javascript"></script>
+
+
+    <!-- Template main javascript -->
+    <script src="../Content/WebPages/js/main.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+        (function (b, o, i, l, e, r) {
+            b.GoogleAnalyticsObject = l; b[l] || (b[l] =
+            function () { (b[l].q = b[l].q || []).push(arguments) }); b[l].l = +new Date;
+            e = o.createElement(i); r = o.getElementsByTagName(i)[0];
+            e.src = '//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e, r)
+        }(window, document, 'script', 'ga'));
+        ga('create', 'UA-XXXXX-X'); ga('send', 'pageview');
+    </script>
+</body>
+</html>

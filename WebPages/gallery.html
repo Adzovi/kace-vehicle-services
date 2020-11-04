@@ -1,0 +1,455 @@
+﻿<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>Gallery</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../Content/WebPages/images/icon.ico" rel="shortcut icon" type="image/x-icon" />
+        <!-- Bootsrap -->
+        <link rel="stylesheet" href="../Content/WebPages/css/bootstrap.min.css">
+
+
+        <!-- Font awesome -->
+        <link rel="stylesheet" href="../Content/WebPages/css/font-awesome.min.css">
+
+        <!-- PrettyPhoto -->
+        <link rel="stylesheet" href="../Content/WebPages/css/prettyPhoto.css">
+
+        <!-- Template main Css -->
+        <link rel="stylesheet" href="../Content/WebPages/css/style.css">
+        
+        <!-- Modernizr -->
+        <script src="../Content/WebPages/js/modernizr-2.6.2.min.js"></script>
+
+    </head>
+    <body>
+    <!-- NAVBAR
+    ================================================== -->
+
+        <header class="main-header">
+
+
+            <nav class="navbar navbar-static-top">
+
+                <div class="navbar-top" style="background:#212529; height:40px;">
+
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-sm-6 col-xs-12" style="float:left; margin-top:7px; font-size:15px; margin-left:-10px;">
+                                <ul class="list-unstyled list-inline header-contact">
+                                    <li><a href="HomePage.html" style="font-size:medium; font-weight:bold; color:white; font-family:'Segoe UI';">KACE VEHICLE SERVICES</></a></li>
+                                </ul>
+                            </div>
+
+                            <div class="col-sm-6 col-xs-12 text-right" style="margin-top:7px; font-size:15px; float:left">
+                                <ul id="sign" class="list-unstyled list-inline header-social">
+
+                                    <li> <a href="Registration.html">Sign Up |</a> </li>
+                                    <li> <a href="Login.html">| Login </a> </li>
+
+                                </ul> <!-- /.header-social  -->
+                                <ul id="sign1" class="list-unstyled list-inline header-social">
+                                    <li>Signed in as: <input type="text" style="border:none; width:210px; background:rgba(33, 37, 41, 0.00); color:white;" id="info" /></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="navbar-main" style="background:white; color:#212529;">
+
+                    <div class="container">
+
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" style="background-color:#212529;">
+
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+
+                            </button>
+
+                            <a class="navbar-brand" style="margin-left:10px;" href="HomePage.html"><img src="../Content/WebPages/images/mainlogo.png" style="width:90px; height:60px;" alt=""></a>
+
+                        </div>
+
+                        <div id="navbar" class="navbar-collapse collapse pull-right">
+
+                            <ul class="nav-items nav navbar-nav">
+
+                                <li><a class="is-active" href="HomePage.html">HOME</a></li>
+
+                                <li class="has-child">
+                                    <a href="Services.html">SERVICES</a>
+
+                                    <ul class="submenu" style="background:white;">
+                                        <li class="submenu-item"><a href="VehicleRegistration.html">Vehicle Registration</a></li>
+                                        <li class="submenu-item"><a href="RoadworthyRegistration.html">Roadworthy Registration</a></li>
+                                        <li class="submenu-item"><a href="DriversLicense.html">Driver's License</a></li>
+                                        <li class="submenu-item"><a href="RoadLiteracy.html">Road Literacy</a></li>
+                                        <li class="submenu-item"><a href="SkillsTest.html">Driving Skills Test</a></li>
+                                        <li class="submenu-item last"><a href="VehicleService.html">Vehicle Servicing</a></li>
+                                    </ul>
+
+                                </li>
+                                <li><a href="gallery.html">GALLERY</a></li>
+                                <li><a href="about.html">ABOUT</a></li>
+                                <li><a href="contact.html">CONTACT</a></li>
+                                <li onclick="logout()" style="margin-left:40px" id="usericon">
+                                    <div><span style="float:left;"><img style="width:30px; margin-top:15px; margin-left:5px;" src="../Content/WebPages/images/icons/user.png" /></span><span style="margin-left:10px; margin-top:15px; float:left; font-size:large;"><a>Sign Out</a></span></div>
+
+                                </li>
+                            </ul>
+
+                        </div> <!-- /#navbar -->
+
+                    </div> <!-- /.container -->
+
+                </div> <!-- /.navbar-main -->
+
+
+            </nav>
+
+        </header> <!-- /. main-header -->
+
+
+
+	<div class="page-heading text-left">
+
+		<div class="container zoomIn animated">
+			
+			<h1 class="page-title"style="color:#212529;">GALLERY <span class="title-under"></span></h1>
+			<p class="page-description">
+				Random Images
+			</p>
+			
+		</div>
+
+	</div>
+
+	<div class="main-container">
+
+		<div class="container gallery fadeIn animated">
+
+			<div class="row">
+				
+
+					<a href="../Content/WebPages/images/gallery/7610291856_931fb9f1_k.jpg" class="col-md-3 col-sm-4 gallery-item lightbox">
+
+						<img src="../Content/WebPages/images/gallery/thumb/7610291856_931fb9f461_" alt="">
+
+						<span class="on-hover">
+							<span class="hover-caption">Image Caption</span>
+						</span>
+
+					</a> <!-- /.gallery-item -->
+
+					<a href="../Content/WebPages/images/gallery/children-8227280.jpg" class="col-md-3 col-sm-4 gallery-item lightbox">
+
+						<img src="../Content/WebPages/images/gallery/thumb/children-8_1280.jpg" alt="">
+						
+						<span class="on-hover">
+							<span class="hover-caption">Image Caption</span>
+						</span>
+						
+					</a> <!-- /.gallery-item -->
+
+
+					<a href="../Content/WebPages/images/gallery/hu-rights.jpg" class="col-md-3 col-sm-4 gallery-item lightbox">
+
+						<img src="../Content/WebPages/images/gallery/thumb/humaights.jpg" alt="">
+						
+						<span class="on-hover">
+							<span class="hover-caption">Image Caption</span>
+						</span>
+						
+					</a> <!-- /.gallery-item -->
+
+
+					<a href="../Content/WebPages/images/gallery/old-books6498_1280.jpg" class="col-md-3 col-sm-4 gallery-item lightbox">
+
+						<img src="../Content/WebPages/images/gallery/thumb/old-book36498_1280.jpg" alt="">
+						
+						<span class="on-hover">
+							<span class="hover-caption">Image Caption</span>
+						</span>
+						
+					</a> <!-- /.gallery-item -->
+
+					<a href="../Content/WebPages/images/gallery/hunger2834_10.jpg" class="col-md-3 col-sm-4 gallery-item lightbox">
+
+						<img src="../Content/WebPages/images/gallery/thumb/hunger-6834_1280.jpg" alt="">
+						
+						<span class="on-hover">
+							<span class="hover-caption">Image Caption</span>
+						</span>
+						
+					</a> <!-- /.gallery-item -->
+
+					<a href="../Content/WebPages/images/gallery/africa-ion.jpg" class="col-md-3 col-sm-4 gallery-item lightbox">
+
+						<img src="../Content/WebPages/images/gallery/thumb/afredcation.jpg" alt="">
+						
+						<span class="on-hover">
+							<span class="hover-caption">Image Caption</span>
+						</span>
+						
+					</a> <!-- /.gallery-item -->
+
+
+					<a href="../Content/WebPages/images/gallery/afghan7980.jpg" class="col-md-3 col-sm-4 gallery-item lightbox">
+
+						<img src="../Content/WebPages/images/gallery/thumb/afghani1280.jpg" alt="">
+
+						<span class="on-hover">
+							<span class="hover-caption">Image Caption</span>
+						</span>
+
+					</a> <!-- /.gallery-item -->
+
+					<a href="../Content/WebPages/images/gallery/boy-61280.jpg" class="col-md-3 col-sm-4 gallery-item lightbox">
+
+						<img src="../Content/WebPages/images/gallery/thumb/boy-607290.jpg" alt="">
+						
+						<span class="on-hover">
+							<span class="hover-caption">Image Caption</span>
+						</span>
+						
+					</a> <!-- /.gallery-item -->
+
+
+					<a href="../Content/WebPages/images/gallery/child-207573.jpg" class="col-md-3 col-sm-4 gallery-item lightbox">
+
+						<img src="../Content/WebPages/images/gallery/thumb/child-73_1280.jpg" alt="">
+						
+						<span class="on-hover">
+							<span class="hover-caption">Image Caption</span>
+						</span>
+						
+					</a> <!-- /.gallery-item -->
+
+
+					<a href="../Content/WebPages/images/gallery/childr654_1280.jpg" class="col-md-3 col-sm-4 gallery-item lightbox">
+
+						<img src="../Content/WebPages/images/gallery/thumb/children.jpg" alt="">
+						
+						<span class="on-hover">
+							<span class="hover-caption">Image Caption</span>
+						</span>
+						
+					</a> <!-- /.gallery-item -->
+
+					<a href="../Content/WebPages/images/gallery/doll-874280.jpg" class="col-md-3 col-sm-4 gallery-item lightbox">
+
+						<img src="../Content/WebPages/images/gallery/thumb/doll7_1280.jpg" alt="">
+						
+						<span class="on-hover">
+							<span class="hover-caption">Image Caption</span>
+						</span>
+						
+					</a> <!-- /.gallery-item -->
+
+					<a href="../Content/WebPages/images/gallery/girl-623.jpg" class="col-md-3 col-sm-4 gallery-item lightbox">
+
+						<img src="../Content/WebPages/images/gallery/thumb/girl_1280.jpg" alt="">
+						
+						<span class="on-hover">
+							<span class="hover-caption">Image Caption</span>
+						</span>
+						
+					</a> <!-- /.gallery-item -->
+					
+				
+			</div>
+			
+		</div>
+
+
+	</div> <!-- /.main-container  -->
+
+
+        <footer class="main-footer">
+
+            <div class="footer-top">
+
+            </div>
+
+
+            <div class="footer-main">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-md-4">
+
+                            <div class="footer-col">
+
+                                <h4 class="footer-title">About us <span class="title-under"></span></h4>
+
+                                <div class="footer-content">
+
+                                    <p>
+                                        <strong>Kace</strong> is an organization setup in the Kwame Nkrumah University of Science and Technology to offer many different vehicle related services. We are easy to access and our services are the best.
+                                    </p>
+
+                                    <p style="margin-top:30px">
+                                        We sacrifice a lot to give you the best because you are our most valuable asset. Thank you for working with us!<br /><span style="float:right; margin-top:10px">- Klubi Grace, CEO</span>
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <div class="footer-col">
+
+                                <h4 class="footer-title">RECENT NEWS <span class="title-under"></span></h4>
+
+                                <div class="footer-content">
+                                    <ul class="tweets list-unstyled">
+                                        <li class="tweet">
+                                            Parliament has passed the Special Petroleum Tax Amendment Bill to reduce the tax from 15% to 13%. The amendment comes after recent protests against the rising cost of fuel as well as calls from the Minority in Parliament.
+
+                                        </li>
+
+                                        <li class="tweet">
+                                            Accra has launched its first ever Road Safety Strategy as parts of efforts to reduce road traffic deaths and injuries in the city. The strategy which spans from 2018 until 2030 was developed in collaboration with Bloomberg Philanthropies Initiative for Global Road Safety (BIGRS) and SSATP African Transport Policy Programme.
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-md-4">
+
+                            <div class="footer-col">
+
+                                <h4 class="footer-title">Contact us <span class="title-under"></span></h4>
+
+                                <div class="footer-content">
+
+                                    <div class="footer-form">
+
+                                        <div class="footer-form">
+
+                                            <form action="../Content/WebPages/php/mail.php" class="ajax-form">
+
+                                                <div class="form-group">
+                                                    <input type="text" name="name" class="form-control" placeholder="Name" required>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <input type="email" name="email" class="form-control" placeholder="E-mail" required>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <textarea name="message" class="form-control" placeholder="Message" required></textarea>
+                                                </div>
+
+                                                <div class="form-group alerts">
+
+                                                    <div class="alert alert-success" role="alert">
+
+                                                    </div>
+
+                                                    <div class="alert alert-danger" role="alert">
+
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <button type="submit" class="btn btn-submit pull-right">Send message</button>
+                                                </div>
+
+                                            </form>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="clearfix"></div>
+
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <div class="container text-right">
+                    Developed by Grace Klubi and Kevin Osei-Wusu, 2018
+                </div>
+            </div>
+
+        </footer> <!-- main-footer -->
+
+
+<script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDCdXPXLOEWGsmB3RKNy-UExIPFlZgwrzE",
+    authDomain: "kace-vehicle-services2.firebaseapp.com",
+    databaseURL: "https://kace-vehicle-services2.firebaseio.com",
+    projectId: "kace-vehicle-services2",
+    storageBucket: "kace-vehicle-services2.appspot.com",
+    messagingSenderId: "784228930105"
+  };
+  firebase.initializeApp(config);
+</script>
+
+        <script src="../Content/WebPages/js/jquery-1.11.1.min.js"></script>
+
+        <script type="text/javascript">
+        window.onload = function () {
+            initApp();
+        };
+        </script>
+
+        <script src="../Content/WebPages/js/myscript.js"></script>
+
+        
+        <!-- jQuery -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../Content/WebPages/js/jquery-1.11.1.min.js"><\/script>')</script>
+
+        <!-- Bootsrap javascript file -->
+        <script src="../Content/WebPages/js/bootstrap.min.js"></script>
+
+        <!-- PrettyPhoto javascript file -->
+        <script src="../Content/WebPages/js/jquery.prettyPhoto.js"></script>
+
+        <!-- Template main javascript -->
+        <script src="../Content/WebPages/js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+    </body>
+</html>

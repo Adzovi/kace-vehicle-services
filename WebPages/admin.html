@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>Admin Page</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../Content/WebPages/images/icon.ico" rel="shortcut icon" type="image/x-icon" />
+        <!-- Bootsrap -->
+        <link rel="stylesheet" href="../Content/WebPages/css/bootstrap.min.css">
+
+
+        <!-- Font awesome -->
+        <link rel="stylesheet" href="../Content/WebPages/css/font-awesome.min.css">
+
+        <!-- PrettyPhoto -->
+        <link rel="stylesheet" href="../Content/WebPages/css/prettyPhoto.css">
+
+        <!-- Template main Css -->
+        <link rel="stylesheet" href="../Content/WebPages/css/style.css">
+        
+        <!-- Modernizr -->
+        <script src="../Content/WebPages/js/modernizr-2.6.2.min.js"></script>
+                
+       </head>
+
+       <body>
+        <header class="main-header">
+ 
+
+            <nav class="navbar navbar-static-top">
+    
+                <div class="navbar-top" style="background:#212529; height:40px;">
+    
+                    <div class="container">
+                        <div class="row">
+    
+                            <div class="col-sm-6 col-xs-12" style="float:left; margin-top:7px; font-size:15px; margin-left:-10px;">
+                                <ul class="list-unstyled list-inline header-contact">
+                                    <li><a href="HomePage.html" style="font-size:medium; font-weight:bold; color:white; font-family:'Segoe UI';">KACE VEHICLE REGISTRATION SYSTEM</></a></li>
+                                </ul>
+                            </div>
+    
+                            <div class="col-sm-6 col-xs-12 text-right" style="margin-top:7px; font-size:15px; float:left">
+                                <ul id="sign" class="list-unstyled list-inline header-social">
+                                    
+                                    <li>ADMIN</li>
+    
+                                </ul> <!-- /.header-social  -->
+                                
+                            </div>
+    
+                        </div>
+                    </div>
+    
+                </div>
+            </nav>
+        </header>
+
+        <div class = "row" id = "main"> 
+            <div style="margin-top: 200px;" id = "firsthalf" class="col-md-6">
+            
+            <button type="submit" class="btn btn-primary" style="margin-left:40%;" id="report" onclick="report()">Generate Report</button>
+
+            </div>
+
+            <div style="margin-top: 100px;" id = "secondhalf" class="col-md-6">
+                <span><h4>Users who registered on:   </h4><input type="text" id="adate" style="border:none; font-size: large; width: 100px;" readonly></span>                
+                <ul id ="list">
+                    
+                </ul>
+            </div>
+
+
+        </div>
+
+        <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-functions.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDCdXPXLOEWGsmB3RKNy-UExIPFlZgwrzE",
+            authDomain: "kace-vehicle-services2.firebaseapp.com",
+            databaseURL: "https://kace-vehicle-services2.firebaseio.com",
+            projectId: "kace-vehicle-services2",
+            storageBucket: "kace-vehicle-services2.appspot.com",
+            messagingSenderId: "784228930105"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <script src="../Content/WebPages/js/jquery-1.11.1.min.js"></script>
+    <script src="../Content/WebPages/js/myscript4.js"></script>
+    
+       </body>
+
+</html>

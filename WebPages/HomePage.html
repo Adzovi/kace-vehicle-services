@@ -1,0 +1,842 @@
+﻿<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <meta name="description" content="">
+
+    <link href="../Content/WebPages/images/icon.ico" rel="icon" type="image/x-icon" />
+
+    <!-- Bootsrap -->
+    <link rel="stylesheet" href="../Content/WebPages/css/bootstrap.min.css">
+
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="../Content/WebPages/css/font-awesome.min.css">
+
+    <!-- Owl carousel -->
+    <link rel="stylesheet" href="../Content/WebPages/css/owl.carousel.css">
+
+    <!-- Template main Css -->
+    <link rel="stylesheet" href="../Content/WebPages/css/style.css">
+
+    <!-- Modernizr -->
+    <script src="../Content/WebPages/js/modernizr-2.6.2.min.js"></script>
+
+
+    <style>
+        .navbar-nav li a:hover {
+            background: #212529;
+            color: white;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-family: 'Segoe UI Emoji';
+        }
+
+        body {
+            font-family: 'Segoe UI Emoji';
+            color: #212529;
+        }
+
+    .mymodal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.body{
+    background-color:white;
+    height:200px;
+    text-align:center;
+    margin-right:-20px;
+    margin-left:-20px;
+}
+
+.btn-primary {
+  background: #f05f40;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 25px;
+  border: 1px solid transparent;
+  -moz-transition: all, 0.3s;
+  -o-transition: all, 0.3s;
+  -webkit-transition: all, 0.3s;
+  transition: all, 0.3s;
+  margin-top:20px;
+  margin-left:15px;
+  font-size:larger;
+  color:white;
+  text-align:center;
+
+}
+
+.btn-primary:hover,
+.btn-primary:focus{
+      background-color: #fff;
+  color: #f05f40;
+  border: 1px solid #f05f40;
+  cursor:pointer;
+}
+
+.head{
+    height:40px;
+    background:#212529;
+    margin-top:-20px;
+    margin-left:-20px;
+    margin-right:-20px;
+}
+
+/* Modal Content/Box */
+.mymodal-content {
+  background-color: #fefefe;
+  height:200px;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid black;
+  width: 35%; /* Could be more or less, depending on screen size */
+  animation: ease-in-out;
+}
+
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-right:20px;
+  margin-left:20px;
+}
+
+.info{
+      color: #aaa;
+  float: left;
+  font-size: 28px;
+  font-weight: bold;
+    margin-right:20px;
+  margin-left:20px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+    </style>
+
+</head>
+
+<body>
+
+
+    <header class="main-header">
+
+
+        <nav class="navbar navbar-static-top">
+
+            <div class="navbar-top" style="background:#212529; height:40px;">
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-sm-6 col-xs-12" style="float:left; margin-top:7px; font-size:15px; margin-left:-10px;">
+                            <ul class="list-unstyled list-inline header-contact">
+                                <li><a href="HomePage.html" style="font-size:medium; font-weight:bold; color:white; font-family:'Segoe UI';">KACE VEHICLE REGISTRATION SYSTEM</></a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-6 col-xs-12 text-right" style="margin-top:7px; font-size:15px; float:left">
+                            <ul id="sign" class="list-unstyled list-inline header-social">
+
+                                <li> <a href="Registration.html">Sign Up |</a> </li>
+                                <li> <a href="Login.html">| Login </a> </li>
+
+                            </ul> <!-- /.header-social  -->
+                            <ul id="sign1" class="list-unstyled list-inline header-social">
+                                <li>Signed in as: <input type="text" style="border:none; width:210px; background:rgba(33, 37, 41, 0.00); color:white;" id="info" /></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="navbar-main" style="background:white; color:#212529;">
+
+                <div class="container">
+
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" style="background-color:#212529;">
+
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+
+                        </button>
+
+                        <a class="navbar-brand" style="margin-left:10px;" href="HomePage.html"><img src="../Content/WebPages/images/mainlogo.png" style="width:90px; height:60px;" alt=""></a>
+
+                    </div>
+
+                    <div id="navbar" class="navbar-collapse collapse pull-right">
+
+                        <ul class="nav-items nav navbar-nav">
+
+                            <li><a class="is-active" href="HomePage.html">HOME</a></li>
+
+                            <li class="has-child">
+                                <a href="Services.html">SERVICES</a>
+
+                                <ul class="submenu" style="background:white;">
+                                    <li class="submenu-item"><a href="VehicleRegistration.html" id="regi">Vehicle Registration</a></li>
+                                    <li class="submenu-item"><a href="RoadworthyRegistration.html">Roadworthy Registration</a></li>
+                                    <li class="submenu-item last"><a href="VehicleService.html">Vehicle Servicing</a></li>
+                                </ul>
+
+                            </li>
+                            <li><a href="about.html">ABOUT</a></li>
+                            <li><a href="contact.html">CONTACT</a></li>
+                            <li onclick="logout()" style="margin-left:40px" id="usericon">
+                                <div><span style="float:left;"><img style="width:30px; margin-top:15px; margin-left:5px;" src="../Content/WebPages/images/icons/user.png" /></span><span style="margin-left:10px; margin-top:15px; float:left; font-size:large;"><a>Sign Out</a></span></div>
+
+                            </li>
+                        </ul>
+
+                    </div> <!-- /#navbar -->
+
+                </div> <!-- /.container -->
+
+            </div> <!-- /.navbar-main -->
+
+
+        </nav>
+
+    </header> <!-- /. main-header -->
+
+
+    <div id="myModal" class="mymodal">
+
+        <!-- Modal content -->
+        <div class="mymodal-content">
+            <div class="head">
+                <span class="info"><input type="text" id="info" style="border:none; font-size:large;
+width:100%; background:#212529; color: white;" readonly/></span>
+                <span class="close">&times;</span>
+            </div>
+            <div align="center" class="body">
+                <input style="margin-top:50px; margin-bottom:20px; width:100%; text-align:center;
+                   border:none; font-size:large; color: #212529;" id="text" type="text" readonly /><br />
+                <input class="btn btn-primary" id="close" type="button" value="Continue" />
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="homeCarousel" class="carousel slide carousel-home" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#homeCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#homeCarousel" data-slide-to="1"></li>
+            <li data-target="#homeCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner" role="listbox">
+
+            <div class="item active">
+
+                <img src="../Content/WebPages/images/slider/home-slider-1.jpg" alt="">
+
+                <div class="container">
+
+                    <div class="carousel-caption">
+
+                        <h2 class="carousel-title bounceInDown animated slow">We are here because of you</h2>
+                        <h4 class="carousel-subtitle bounceInUp animated slow ">Ready to Serve</h4>
+                        <a href="#services" class="btn btn-lg btn-secondary hidden-xs bounceInUp animated slow">START NOW!</a>
+
+                    </div> <!-- /.carousel-caption -->
+
+                </div>
+
+            </div> <!-- /.item -->
+
+
+            <div class="item">
+
+                <img src="../Content/WebPages/images/slider/home-slider-2.jpg" alt="">
+
+                <div class="container">
+
+                    <div class="carousel-caption">
+
+                        <h2 class="carousel-title bounceInDown animated slow">You are our most valuable asset</h2>
+                        <h4 class="carousel-subtitle bounceInUp animated slow">You are very important to us.</h4>
+                        <a href="#services" class="btn btn-lg btn-secondary hidden-xs bounceInUp animated">START NOW!</a>
+
+                    </div> <!-- /.carousel-caption -->
+
+                </div>
+
+            </div> <!-- /.item -->
+
+
+
+
+            <div class="item ">
+
+                <img src="../Content/WebPages/images/slider/home-slider-3.jpg" alt="">
+
+                <div class="container">
+
+                    <div class="carousel-caption">
+
+                        <h2 class="carousel-title bounceInDown animated slow">Thank You for choosing us.</h2>
+                        <h4 class="carousel-subtitle bounceInUp animated slow">Let's make a difference</h4>
+                        <a href="#services" class="btn btn-lg btn-secondary hidden-xs bounceInUp animated slow">START NOW!</a>
+
+                    </div> <!-- /.carousel-caption -->
+
+                </div>
+
+            </div> <!-- /.item -->
+
+        </div>
+
+        <a style="background:#f05f40;" class="left carousel-control" href="#homeCarousel" role="button" data-slide="prev">
+            <span class="fa fa-angle-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+
+        <a style="background:#f05f40;" class="right carousel-control" href="#homeCarousel" role="button" data-slide="next">
+            <span class="fa fa-angle-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+
+
+    </div><!-- /.carousel -->
+    <div style="width:100%; background-color:#f05f40; color:#f05f40; height:30px;">d</div>
+    <div style="width:100%; background-color:#212529; color:#212529; height:30px;">d</div>
+
+
+    <div class="section-home about-us fadeIn animated" id="services" style="margin-top:100px;">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-3 col-sm-6">
+
+                    <div class="about-us-col">
+
+                        <div class="col-icon-wrapper">
+                            <img src="../Content/WebPages/images/icons/our-mission-icon.png" alt="">
+                        </div>
+                        <h3 class="col-title">our mission</h3>
+                        <div class="col-details">
+
+                            <p>Our core Mission at Kace is to provide easy simple and fast services to customers at very affordable prices. As you are our most valuable asset, we are committed to giving you are best.</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-3 col-sm-6">
+
+                    <div class="about-us-col">
+
+                        <div class="col-icon-wrapper">
+                            <img src="../Content/WebPages/images/icons/make-donation-icon.png" alt="">
+                        </div>
+                        <h3 class="col-title">Make Payments</h3>
+                        <div class="col-details">
+
+                            <p>Our system offers you the opportunity to make payments electronically through mobile money payments. Our services are also quite cheap saving you a lot of money and time.</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-3 col-sm-6">
+
+                    <div class="about-us-col">
+
+                        <div class="col-icon-wrapper">
+                            <img src="../Content/WebPages/images/icons/programs-icon.png" alt="">
+                        </div>
+                        <h3 class="col-title">Our Services</h3>
+                        <div class="col-details">
+
+                            <p>Kace offers you a lot vehicle related services. From registration to vehicle repair. Name it, We make it happen.</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-3 col-sm-6">
+
+                    <div class="about-us-col">
+
+                        <div class="col-icon-wrapper">
+                            <img src="../Content/WebPages/images/icons/help-icon.png" alt="">
+                        </div>
+                        <h3 class="col-title">Help & Support</h3>
+                        <div class="col-details">
+
+                            <p>We provide you with support in any vehicle related issues. Just give us a call or send us an email and our customer service representatives will attend to you.</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div> <!-- /.about-us -->
+
+    <div class="section-home home-reasons" style="margin-top:60px;">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <div class="reasons-col animate-onscroll fadeIn">
+
+                        <img src="../Content/WebPages/images/reasons/we-fight-togother.jpg" alt="">
+
+                        <div class="reasons-titles">
+
+                            <h3 class="reasons-title" style="margin-top:-20px">Vehicle Registration</h3>
+                            <h5 class="reason-subtitle"><a href="VehicleRegistration.html" id="regi" class="btn btn-primary" style="margin-top:-5px;">Click to Begin</a></h5>
+
+                        </div>
+
+                        <div class="on-hover hidden-xs">
+                            <h5 class="text-center text-capitalize" style="font-weight:bold; font-size:larger; margin-top:-10px; margin-bottom:30px;">Steps To Register Your Vehicle:</h5>
+                            <ul style="list-style-type:disc; font-size:medium;">
+                                
+                                <li style="margin-bottom:10px;">Take your vehicle to CEPS for certification of vehicle documents.</li>
+                                <li style="margin-bottom:10px;">Take your vehicle to a private garage for inspection. eg. Kim</li>
+                                <li style="margin-bottom:10px;">Upload CEPS documents and other required documents.</li>
+    
+                                <li style="margin-bottom:10px;">Fill all forms and provide any required information.</li>
+                                <li style="margin-bottom:10px;">An invoice will be generated with details of your transaction</li>
+                                <li style="margin-bottom:10px;">Finalize Registration.</li>
+                                <li style="margin-bottom:10px;">Load Receipt and Proof of registration and present for collection of registration plate.</li>
+                                <li style="margin-bottom:10px;">Payment will be made at our accounts office</li>
+                                <li style="margin-bottom:10px;">Any errors made during registration will be rectified</li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-6">
+
+                    <div class="reasons-col animate-onscroll fadeIn">
+
+                        <img src="../Content/WebPages/images/reasons/we-care-about.jpg" alt="">
+
+                        <div class="reasons-titles">
+
+                            <h3 class="reasons-title" style="margin-top:-20px">RoadWorthy Registration</h3>
+                            <h5 class="reason-subtitle"><a href="#" class="btn btn-primary" style="margin-top:-5px;">Click to Begin</a></h5>
+
+                        </div>
+
+                        <div class="on-hover hidden-xs">
+                            <h5 class="text-center text-capitalize" style="font-weight:bold; font-size:larger; margin-top:-10px; margin-bottom:30px;">Steps To Obtain Roadworthy Documents</h5>
+                            <ul style="list-style-type:disc; font-size:medium;">
+                                <li style="margin-bottom:10px;">Take your vehicle for inspection at a private garage.</li>
+                                <li style="margin-bottom:10px;">Provide original vehicle and inspection documents. This is for a new vehicle</li>
+                                <li style="margin-bottom:10px;">For an already registered vehicle, you will need only the old roadworthy certificate.</li>
+                                
+                                <li style="margin-bottom:10px;">Fill the form and provide any necessary information.</li>
+                                <li style="margin-bottom:10px;">Make Payments</li>
+                                <li style="margin-bottom:10px;">Book an appointment for collection. </li>
+                                <li style="margin-bottom:10px;">The documents will be reviewed and processed. you will receive a notification is any errors are detected.</li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+
+    </div> <!-- /.home-reasons -->
+
+    <div class="section-home our-causes animate-onscroll fadeIn">
+
+        <div class="container">
+
+            <h2 class="title-style-1">Other Service<span class="title-under"></span></h2>
+
+            <div class="row">
+
+                
+                <div class="col-md-3 col-sm-6" style="margin-left: 40%">
+
+                    <div class="cause">
+
+                        <img src="../Content/WebPages/images/causes/cause-culture.jpg" alt="" class="cause-img">
+
+                        <h4 class="cause-title"><a href="#">VEHICLE SERVICING</a></h4>
+                        <div class="cause-details">
+                            We offer vehicle repair and servicing at a moderate cost. Bring your vehicle for regular checks to make sure it is safe for use.
+                        </div>
+
+                        <div class="btn-holder text-center">
+
+                            <a href="VehicleService.html" class="btn btn-primary" style="margin-top:-70px;">CLICK TO BEGIN</a>
+
+                        </div>
+
+
+
+                    </div> <!-- /.cause -->
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div> <!-- /.our-causes -->
+
+
+
+
+
+
+    <div class="section-home our-sponsors animate-onscroll fadeIn">
+
+        <div class="container">
+
+            <h2 class="title-style-1">Our Sponsors<span class="title-under"></span></h2>
+
+            <ul class="owl-carousel list-unstyled list-sponsors">
+
+
+                <li> <img src="../Content/WebPages/images/sponsors/wik" alt=""></li>
+                <li> <img src="../Content/WebPages/images/sponsors/one-wo" alt=""></li>
+                <li> <img src="../Content/WebPages/images/sponsors/coslogo.png" alt="" style="width:90px; margin-top:10px; margin-left:10px"></li>
+                <li> <img src="../Content/WebPages/images/sponsors/knustlogo.jpg" alt="" style="width:90px; margin-top:-10px"></li>
+                <li> <img src="../Content/WebPages/images/sponsors/scisa.jpg" alt=""></li>
+                <li> <img src="../Content/WebPages/images/sponsors/css.png" alt=""></li>
+                <li> <img src="../Content/WebPages/images/sponsors/unitnations.png" alt=""></li>
+                <li> <img src="../Content/WebPages/images/sponsors/bus" alt=""></li>
+            </ul>
+
+        </div>
+
+    </div> <!-- /.our-sponsors -->
+
+
+
+
+
+    <footer class="main-footer">
+
+        <div class="footer-top">
+
+        </div>
+
+
+        <div class="footer-main">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-4">
+
+                        <div class="footer-col">
+
+                            <h4 class="footer-title">About us <span class="title-under"></span></h4>
+
+                            <div class="footer-content">
+
+                                <p>
+                                    <strong>Kace</strong> is an organization setup in the Kwame Nkrumah University of Science and Technology to offer many different vehicle related services. We are easy to access and our services are the best.
+                                </p>
+
+                                <p style="margin-top:30px">
+                                    We sacrifice a lot to give you the best because you are our most valuable asset. Thank you for working with us!<br /><span style="float:right; margin-top:10px">- Klubi Grace, CEO</span>
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="footer-col">
+
+                            <h4 class="footer-title">RECENT NEWS <span class="title-under"></span></h4>
+
+                            <div class="footer-content">
+                                <ul class="tweets list-unstyled">
+                                    <li class="tweet">
+                                        Parliament has passed the Special Petroleum Tax Amendment Bill to reduce the tax from 15% to 13%. The amendment comes after recent protests against the rising cost of fuel as well as calls from the Minority in Parliament.
+
+                                    </li>
+
+                                    <li class="tweet">
+                                        Accra has launched its first ever Road Safety Strategy as parts of efforts to reduce road traffic deaths and injuries in the city. The strategy which spans from 2018 until 2030 was developed in collaboration with Bloomberg Philanthropies Initiative for Global Road Safety (BIGRS) and SSATP African Transport Policy Programme.
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-4">
+
+                        <div class="footer-col">
+
+                            <h4 class="footer-title">Contact us <span class="title-under"></span></h4>
+
+                            <div class="footer-content">
+
+                                <div class="footer-form">
+
+                                    <div class="footer-form">
+
+                                        <form action="../Content/WebPages/php/mail.php" class="ajax-form">
+
+                                            <div class="form-group">
+                                                <input type="text" name="name" class="form-control" placeholder="Name" required>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="email" name="email" class="form-control" placeholder="E-mail" required>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <textarea name="message" class="form-control" placeholder="Message" required></textarea>
+                                            </div>
+
+                                            <div class="form-group alerts">
+
+                                                <div class="alert alert-success" role="alert">
+
+                                                </div>
+
+                                                <div class="alert alert-danger" role="alert">
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-submit pull-right">Send message</button>
+                                            </div>
+
+                                        </form>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="clearfix"></div>
+
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <div class="container text-right">
+                Developed by Grace Klubi and Kevin Osei-Wusu, 2018
+            </div>
+        </div>
+
+    </footer> <!-- main-footer -->
+    <!-- Donate Modal -->
+    <div class="modal fade" id="donateModal" tabindex="-1" role="dialog" aria-labelledby="donateModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="donateModalLabel">DONATE NOW</h4>
+                </div>
+                <div class="modal-body">
+
+                    <form class="form-donation">
+
+                        <h3 class="title-style-1 text-center">Thank you for your donation <span class="title-under"></span>  </h3>
+
+                        <div class="row">
+
+                            <div class="form-group col-md-12 ">
+                                <input type="text" class="form-control" id="amount" placeholder="AMOUNT(€)">
+                            </div>
+
+                        </div>
+
+
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" name="firstName" placeholder="First name*">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" name="lastName" placeholder="Last name*">
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" name="email" placeholder="Email*">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" name="phone" placeholder="Phone">
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="form-group col-md-12">
+                                <input type="text" class="form-control" name="address" placeholder="Address">
+                            </div>
+
+                        </div>
+
+
+                        <div class="row">
+
+                            <div class="form-group col-md-12">
+                                <textarea cols="30" rows="4" class="form-control" name="note" placeholder="Additional note"></textarea>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="form-group col-md-12">
+                                <button type="submit" class="btn btn-primary pull-right" name="donateNow">DONATE NOW</button>
+                            </div>
+
+                        </div>
+
+
+
+
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div> <!-- /.modal -->
+    <!--  Scripts
+    ================================================== -->
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDCdXPXLOEWGsmB3RKNy-UExIPFlZgwrzE",
+            authDomain: "kace-vehicle-services2.firebaseapp.com",
+            databaseURL: "https://kace-vehicle-services2.firebaseio.com",
+            projectId: "kace-vehicle-services2",
+            storageBucket: "kace-vehicle-services2.appspot.com",
+            messagingSenderId: "784228930105"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <script src="../Content/WebPages/js/jquery-1.11.1.min.js"></script>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            initApp();
+        };
+    </script>
+
+    <script src="../Content/WebPages/js/myscript.js"></script>
+
+
+    <!-- jQuery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../Content/WebPages/js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Bootsrap javascript file -->
+    <script src="../Content/WebPages/js/bootstrap.min.js"></script>
+
+    <!-- owl carouseljavascript file -->
+    <script src="../Content/WebPages/js/owl.carousel.min.js"></script>
+
+    <!-- Template main javascript -->
+    <script src="../Content/WebPages/js/main.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+        (function (b, o, i, l, e, r) {
+            b.GoogleAnalyticsObject = l; b[l] || (b[l] =
+            function () { (b[l].q = b[l].q || []).push(arguments) }); b[l].l = +new Date;
+            e = o.createElement(i); r = o.getElementsByTagName(i)[0];
+            e.src = '//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e, r)
+        }(window, document, 'script', 'ga'));
+        ga('create', 'UA-XXXXX-X'); ga('send', 'pageview');
+    </script>
+
+</body>
+</html>

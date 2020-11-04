@@ -1,0 +1,250 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../Content/Accounts/images/icon.ico" rel="shortcut icon" type="image/x-icon" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+
+    <script src="../Content/WebPages/js/jquery-1.11.1.min.js"></script>
+    <script src="../Content/WebPages/js/myscript.js"></script>
+
+    <!-- Custom Theme files -->
+    <link href="../Content/Accounts/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../Content/Accounts/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- //Custom Theme files -->
+    <!-- web font -->
+    <link href="//fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet">
+    <!-- //web font -->
+
+    <style>
+        .loader {
+  margin-top:-10px;
+  border: 10px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 10px solid #f05f40;
+  border-bottom: 10px solid #f05f40;
+  width: 15px;
+  height: 15px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  margin-bottom:-25px
+
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.mymodal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.body{
+    background-color:white;
+    height:200px;
+    text-align:center;
+    margin-right:-20px;
+    margin-left:-20px;
+
+}
+
+.btn-primary {
+  background: #f05f40;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 25px;
+  border: 1px solid transparent;
+  -moz-transition: all, 0.3s;
+  -o-transition: all, 0.3s;
+  -webkit-transition: all, 0.3s;
+  transition: all, 0.3s;
+  margin-top:20px;
+  margin-left:15px;
+  font-size:larger;
+  color:white;
+  text-align:center;
+
+}
+
+.btn-primary:hover,
+.btn-primary:focus{
+      background-color: #fff;
+  color: #f05f40;
+  border: 1px solid #f05f40;
+  cursor:pointer;
+}
+
+.head{
+    height:40px;
+    background:#212529;
+    margin-top:-20px;
+    margin-left:-20px;
+    margin-right:-20px;
+}
+
+/* Modal Content/Box */
+.mymodal-content {
+  background-color: #fefefe;
+  height:200px;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid black;
+  width: 35%; /* Could be more or less, depending on screen size */
+  
+}
+
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-right:20px;
+  margin-left:20px;
+}
+
+.info{
+      color: #aaa;
+  float: left;
+  font-size: 28px;
+  font-weight: bold;
+    margin-right:20px;
+  margin-left:20px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+    </style>
+
+</head>
+<body>
+
+    <!-- main -->
+    <div class="w3layouts-main">
+        <div class="bg-layer">
+            <h1>Login Form</h1>
+            <div class="header-main">
+                <div class="main-icon">
+                    <span class=""><img src="../Content/Accounts/images/mainlogo.png" /></span>
+                </div>
+                <div class="header-left-bottom">
+                    <div>
+                        <div class="icon1">
+                            <span class="fa fa-user"></span>
+                            <input type="email" id="email" placeholder="Email Address" required="" />
+                        </div>
+                        <div class="icon1">
+                            <span class="fa fa-lock"></span>
+                            <input type="password" id="password" placeholder="Password" required="" />
+                        </div>
+                        <div class="login-check">
+                            <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i> Keep me logged in</label>
+                        </div>
+                        <div class="bottom">
+                            <button class="btn" id="btnlogin" onclick="login()">Log In</button>
+                        </div>
+                        <div class="links" style="font-size:large;">
+                            <p><a href="" onclick="sendPasswordReset()">Forgot Password?</a></p>
+                            <p class="right"><a href="Registration.html">New User? Register</a></p>
+                            <div class="clear"></div>
+
+                        </div>
+                    
+                        <div id="myModal" class="mymodal">
+
+                                <!-- Modal content -->
+                                <div class="mymodal-content">
+                                    <div class="head">
+                                        <span class="info">
+                                            <input type="text" id="infor" style="border:none; font-size:large;
+ width:100%; background:#212529; color: white;" readonly />
+                                        </span>
+                                        <span class="close">&times;</span>
+                                    </div>
+                                    <div align="center" class="body">
+                                        <input style="margin-top:50px; margin-bottom:20px; width:100%; text-align:center;
+                                       border:none; font-size:large; color: #212529;" id="text" type="text" readonly /><br />
+                                        <input class="btn btn-primary" id="close" type="button" value="Continue" />
+                                    </div>
+                                </div>
+
+                            </div>
+                    </div>
+                </div>
+
+                <div align="center">
+                    <div id="loader" style="display:none;" class="loader"></div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+            <p>Kace Vehicle Services 2018/2019, Developed by Grace Klubi and Kevin Osei-Wusu.</p>
+        </div>
+
+
+    </div>
+    <!-- //main -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-functions.js"></script>
+
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDCdXPXLOEWGsmB3RKNy-UExIPFlZgwrzE",
+            authDomain: "kace-vehicle-services2.firebaseapp.com",
+            databaseURL: "https://kace-vehicle-services2.firebaseio.com",
+            projectId: "kace-vehicle-services2",
+            storageBucket: "kace-vehicle-services2.appspot.com",
+            messagingSenderId: "784228930105"
+        };
+        firebase.initializeApp(config);
+
+    </script>
+
+
+
+</body>
+</html>

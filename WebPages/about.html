@@ -1,0 +1,708 @@
+﻿<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>About Us</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../Content/WebPages/images/icon.ico" rel="shortcut icon" type="image/x-icon" />
+        <!-- Bootsrap -->
+        <link rel="stylesheet" href="../Content/WebPages/css/bootstrap.min.css">
+
+        <!-- Font awesome -->
+        <link rel="stylesheet" href="../Content/WebPages/css/font-awesome.min.css">
+
+        <!-- Template main Css -->
+        <link rel="stylesheet" href="../Content/WebPages/css/style.css">
+        
+        <!-- Modernizr -->
+        <script src="../Content/WebPages/js/modernizr-2.6.2.min.js"></script>
+
+        <style>
+            .mymodal {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Sit on top */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          background-color: rgb(0,0,0); /* Fallback color */
+          background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+        
+        .body{
+            background-color:white;
+            height:200px;
+            text-align:center;
+            margin-right:-20px;
+            margin-left:-20px;
+        }
+        
+        .btn-primary {
+          background: #f05f40;
+          border: none;
+          border-radius: 5px;
+          padding: 10px 25px;
+          border: 1px solid transparent;
+          -moz-transition: all, 0.3s;
+          -o-transition: all, 0.3s;
+          -webkit-transition: all, 0.3s;
+          transition: all, 0.3s;
+          margin-top:20px;
+          margin-left:15px;
+          font-size:larger;
+          color:white;
+          text-align:center;
+        
+        }
+        
+        .btn-primary:hover,
+        .btn-primary:focus{
+              background-color: #fff;
+          color: #f05f40;
+          border: 1px solid #f05f40;
+          cursor:pointer;
+        }
+        
+        .head{
+            height:40px;
+            background:#212529;
+            margin-top:-20px;
+            margin-left:-20px;
+            margin-right:-20px;
+        }
+        
+        /* Modal Content/Box */
+        .mymodal-content {
+          background-color: #fefefe;
+          height:200px;
+          margin: 15% auto; /* 15% from the top and centered */
+          padding: 20px;
+          border: 1px solid black;
+          width: 35%; /* Could be more or less, depending on screen size */
+          animation: ease-in-out;
+        }
+        
+        
+        /* The Close Button */
+        .close {
+          color: #aaa;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+          margin-right:20px;
+          margin-left:20px;
+        }
+        
+        .info{
+              color: #aaa;
+          float: left;
+          font-size: 28px;
+          font-weight: bold;
+            margin-right:20px;
+          margin-left:20px;
+        }
+        
+        .close:hover,
+        .close:focus {
+          color: black;
+          text-decoration: none;
+          cursor: pointer;
+        }
+            </style>
+        
+
+    </head>
+    <body>
+    <!-- NAVBAR
+    ================================================== -->
+
+        <header class="main-header">
+
+
+            <nav class="navbar navbar-static-top">
+
+                <div class="navbar-top" style="background:#212529; height:40px;">
+
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-sm-6 col-xs-12" style="float:left; margin-top:7px; font-size:15px; margin-left:-10px;">
+                                <ul class="list-unstyled list-inline header-contact">
+                                    <li><a href="HomePage.html" style="font-size:medium; font-weight:bold; color:white; font-family:'Segoe UI';">KACE VEHICLE REGISTRATION SYSTEM</></a></li>
+                                </ul>
+                            </div>
+
+                            <div class="col-sm-6 col-xs-12 text-right" style="margin-top:7px; font-size:15px; float:left">
+                                <ul id="sign" class="list-unstyled list-inline header-social">
+
+                                    <li> <a href="Registration.html">Sign Up |</a> </li>
+                                    <li> <a href="Login.html">| Login </a> </li>
+
+                                </ul> <!-- /.header-social  -->
+                                <ul id="sign1" class="list-unstyled list-inline header-social">
+                                    <li>Signed in as: <input type="text" style="border:none; width:210px; background:rgba(33, 37, 41, 0.00); color:white;" id="info" /></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="navbar-main" style="background:white; color:#212529;">
+
+                    <div class="container">
+
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" style="background-color:#212529;">
+
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+
+                            </button>
+
+                            <a class="navbar-brand" style="margin-left:10px;" href="HomePage.html"><img src="../Content/WebPages/images/mainlogo.png" style="width:90px; height:60px;" alt=""></a>
+
+                        </div>
+
+                        <div id="navbar" class="navbar-collapse collapse pull-right">
+
+                            <ul class="nav-items nav navbar-nav">
+
+                                <li><a class="is-active" href="HomePage.html">HOME</a></li>
+
+                                <li class="has-child">
+                                    <a href="Services.html">SERVICES</a>
+
+                                    <ul class="submenu" style="background:white;">
+                                        <li class="submenu-item"><a href="VehicleRegistration.html" id="regi">Vehicle Registration</a></li>
+                                        <li class="submenu-item"><a href="RoadworthyRegistration.html">Roadworthy Registration</a></li>
+                                        <li class="submenu-item last"><a href="VehicleService.html">Vehicle Servicing</a></li>
+                                    </ul>
+
+                                </li>
+                                <li><a href="about.html">ABOUT</a></li>
+                                <li><a href="contact.html">CONTACT</a></li>
+                                <li onclick="logout()" style="margin-left:40px" id="usericon">
+                                    <div><span style="float:left;"><img style="width:30px; margin-top:15px; margin-left:5px;" src="../Content/WebPages/images/icons/user.png" /></span><span style="margin-left:10px; margin-top:15px; float:left; font-size:large;"><a>Sign Out</a></span></div>
+
+                                </li>
+                            </ul>
+
+                        </div> <!-- /#navbar -->
+
+                    </div> <!-- /.container -->
+
+                </div> <!-- /.navbar-main -->
+
+
+            </nav>
+
+        </header> <!-- /. main-header -->
+
+      
+        <div id="myModal" class="mymodal">
+
+            <!-- Modal content -->
+            <div class="mymodal-content">
+                <div class="head">
+                    <span class="info">
+                        <input type="text" id="infor" style="border:none; font-size:large;
+width:100%; background:#212529; color: white;" readonly />
+                    </span>
+                    <span class="close">&times;</span>
+                </div>
+                <div align="center" class="body">
+                    <input style="margin-top:50px; margin-bottom:20px; width:100%; text-align:center;
+                   border:none; font-size:large; color: #212529;" id="text" type="text" readonly /><br />
+                    <input class="btn btn-primary" id="close" type="button" value="Continue" />
+                </div>
+            </div>
+
+        </div>
+
+	<div class="page-heading text-left">
+
+		<div class="container zoomIn animated">
+			
+			<h1 class="page-title" style="color:#212529;">ABOUT US <span class="title-under"></span></h1>
+			<p class="page-description">
+				All you need to know about Kace Vehicle Services
+			</p>
+			
+		</div>
+
+	</div>
+
+	<div class="main-container">
+
+		<div class="container">
+
+			<div class="row fadeIn animated">
+
+				<div class="col-md-6">
+
+					<img src="../Content/WebPages/images/about-us.jpg" alt="" class="img-responsive">
+
+				</div>
+
+				<div class="col-md-6">
+
+					<h2 class="title-style-2">ABOUT KACE<span class="title-under"></span></h2>
+
+					<p>
+						
+					</p>
+
+					<p>
+						
+					</p>
+
+					<p>
+						
+					</p>
+
+					<p>
+						
+					</p>
+
+					<p>
+						
+
+					</p>
+					
+				</div>
+
+			</div> <!-- /.row -->
+
+
+            <div class="section-home about-us fadeIn animated" id="services" style="margin-left:-15px">
+
+                <div class="container">
+
+                    <div class="row">
+
+                        <div class="col-md-3 col-sm-6">
+
+                            <div class="about-us-col">
+
+                                <div class="col-icon-wrapper">
+                                    <img src="../Content/WebPages/images/icons/our-mission-icon.png" alt="">
+                                </div>
+                                <h3 class="col-title">our mission</h3>
+                                <div class="col-details">
+
+                                    <p>Our core Mission at Kace is to provide easy simple and fast services to customers at very affordable prices. As you are our most valuable asset, we are committed to giving you are best.</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-md-3 col-sm-6">
+
+                            <div class="about-us-col">
+
+                                <div class="col-icon-wrapper">
+                                    <img src="../Content/WebPages/images/icons/make-donation-icon.png" alt="">
+                                </div>
+                                <h3 class="col-title">Make Payments</h3>
+                                <div class="col-details">
+
+                                    <p>Our system offers you the opportunity to make payments electronically through mobile money payments. Our services are also quite cheap saving you a lot of money and time.</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-md-3 col-sm-6">
+
+                            <div class="about-us-col">
+
+                                <div class="col-icon-wrapper">
+                                    <img src="../Content/WebPages/images/icons/programs-icon.png" alt="">
+                                </div>
+                                <h3 class="col-title">Our Services</h3>
+                                <div class="col-details">
+
+                                    <p>Kace offers you a lot vehicle related services. From registration to driver's license acquisition and vehicle repair. Name it, We make it happen.</p>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-md-3 col-sm-6">
+
+                            <div class="about-us-col">
+
+                                <div class="col-icon-wrapper">
+                                    <img src="../Content/WebPages/images/icons/help-icon.png" alt="">
+                                </div>
+                                <h3 class="col-title">Help & Support</h3>
+                                <div class="col-details">
+
+                                    <p>We provide you with support in any vehicle related issues. Just give us a call or send us an email and our customer service representatives will attend to you.</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+		</div> <!-- /.about-us -->
+
+
+	    <div class="our-team animate-onscroll fadeIn">
+
+	        <div class="container">
+
+	            <h2 class="title-style-1">Our Team <span class="title-under"></span></h2>
+
+	            <div class="row">
+
+	                <div class="col-md-3 col-sm-6">
+
+	                    <div class="team-member">
+
+	                        <div class="thumnail">
+
+	                            <img src="../Content/WebPages/images/team/member-1.jpg" alt="" class="cause-img">
+	                            
+	                        </div>
+
+
+
+	                        <h4 class="member-name"><a href="#">Grace Klubi</a></h4>
+
+	                        <div class="member-position">
+	                            FOUNDER / CEO
+	                        </div>
+
+	                        <div class="btn-holder">
+
+	                          <a href="mailto:g" class="btn"> <i class="fa fa-envelope"></i> </a>
+	                          <a href="#" class="btn"> <i class="fa fa-facebook"></i> </a>
+	                          <a href="#" class="btn"> <i class="fa fa-google"></i> </a>
+	                          <a href="#" class="btn"> <i class="fa fa-twitter"></i> </a>
+	                          <a href="#" class="btn"> <i class="fa fa-linkedin"></i> </a>
+	                          
+	                        </div>
+
+	                        
+
+	                    </div> <!-- /.team-member -->
+	                    
+	                </div>
+
+	                <div class="col-md-3 col-sm-6">
+
+	                    <div class="team-member">
+
+	                        <div class="thumnail">
+
+	                            <img src="../Content/WebPages/images/team/member-2.jpg" alt="" class="cause-img">
+	                            
+	                        </div>
+
+
+
+	                        <h4 class="member-name"><a href="#">Osei-Wusu Kevin</a></h4>
+
+	                        <div class="member-position">
+	                            Co-Founder
+	                        </div>
+
+	                        <div class="btn-holder">
+
+	                          <a href="#" class="btn"> <i class="fa fa-envelope"></i> </a>
+	                          <a href="#" class="btn"> <i class="fa fa-facebook"></i> </a>
+	                          <a href="#" class="btn"> <i class="fa fa-google"></i> </a>
+	                          <a href="#" class="btn"> <i class="fa fa-twitter"></i> </a>
+	                          <a href="#" class="btn"> <i class="fa fa-linkedin"></i> </a>
+	                          
+	                        </div>
+
+	                        
+
+	                    </div> <!-- /.team-member -->
+	                    
+	                </div>
+
+
+	                <div class="col-md-3 col-sm-6">
+
+	                    <div class="team-member">
+
+	                        <div class="thumnail">
+
+	                            <img src="../Content/WebPages/images/team/member-3.jpg" alt="" class="cause-img">
+	                            
+	                        </div>
+
+
+
+	                        <h4 class="member-name"><a href="#">Klubi Makafui</a></h4>
+
+	                        <div class="member-position">
+	                            HR Manager
+	                        </div>
+
+	                        <div class="btn-holder">
+
+	                          <a href="#" class="btn"> <i class="fa fa-envelope"></i> </a>
+	                          <a href="#" class="btn"> <i class="fa fa-facebook"></i> </a>
+	                          <a href="#" class="btn"> <i class="fa fa-google"></i> </a>
+	                          <a href="#" class="btn"> <i class="fa fa-twitter"></i> </a>
+	                          <a href="#" class="btn"> <i class="fa fa-linkedin"></i> </a>
+	                          
+	                        </div>
+
+	                        
+
+	                    </div> <!-- /.team-member -->
+	                    
+	                </div>
+
+
+	                <div class="col-md-3 col-sm-6">
+
+	                    <div class="team-member">
+
+	                        <div class="thumnail">
+
+	                            <img src="../Content/WebPages/images/team/member-4.jpg" alt="" class="cause-img">
+	                            
+	                        </div>
+
+
+
+	                        <h4 class="member-name"><a href="#">Normeshie E. Sandra</a></h4>
+
+	                        <div class="member-position">
+	                            Accountant
+	                        </div>
+
+	                        <div class="btn-holder">
+
+	                          <a href="#" class="btn"> <i class="fa fa-envelope"></i> </a>
+	                          <a href="#" class="btn"> <i class="fa fa-facebook"></i> </a>
+	                          <a href="#" class="btn"> <i class="fa fa-google"></i> </a>
+	                          <a href="#" class="btn"> <i class="fa fa-twitter"></i> </a>
+	                          <a href="#" class="btn"> <i class="fa fa-linkedin"></i> </a>
+	                          
+	                        </div>
+
+	                        
+
+	                    </div> <!-- /.team-member -->
+	                    
+	                </div>
+
+	            </div> <!-- /.row -->
+
+	        </div>
+
+	    </div>
+		
+
+
+	</div>
+
+
+        <footer class="main-footer">
+
+            <div class="footer-top">
+
+            </div>
+
+
+            <div class="footer-main">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-md-4">
+
+                            <div class="footer-col">
+
+                                <h4 class="footer-title">About us <span class="title-under"></span></h4>
+
+                                <div class="footer-content">
+
+                                    <p>
+                                        <strong>Kace</strong> is an organization setup in the Kwame Nkrumah University of Science and Technology to offer many different vehicle related services. We are easy to access and our services are the best.
+                                    </p>
+
+                                    <p style="margin-top:30px">
+                                        We sacrifice a lot to give you the best because you are our most valuable asset. Thank you for working with us!<br /><span style="float:right; margin-top:10px">- Klubi Grace, CEO</span>
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <div class="footer-col">
+
+                                <h4 class="footer-title">RECENT NEWS <span class="title-under"></span></h4>
+
+                                <div class="footer-content">
+                                    <ul class="tweets list-unstyled">
+                                        <li class="tweet">
+                                            Parliament has passed the Special Petroleum Tax Amendment Bill to reduce the tax from 15% to 13%. The amendment comes after recent protests against the rising cost of fuel as well as calls from the Minority in Parliament.
+
+                                        </li>
+
+                                        <li class="tweet">
+                                            Accra has launched its first ever Road Safety Strategy as parts of efforts to reduce road traffic deaths and injuries in the city. The strategy which spans from 2018 until 2030 was developed in collaboration with Bloomberg Philanthropies Initiative for Global Road Safety (BIGRS) and SSATP African Transport Policy Programme.
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-md-4">
+
+                            <div class="footer-col">
+
+                                <h4 class="footer-title">Contact us <span class="title-under"></span></h4>
+
+                                <div class="footer-content">
+
+                                    <div class="footer-form">
+
+                                        <div class="footer-form">
+
+                                            <form action="../Content/WebPages/php/mail.php" class="ajax-form">
+
+                                                <div class="form-group">
+                                                    <input type="text" name="name" class="form-control" placeholder="Name" required>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <input type="email" name="email" class="form-control" placeholder="E-mail" required>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <textarea name="message" class="form-control" placeholder="Message" required></textarea>
+                                                </div>
+
+                                                <div class="form-group alerts">
+
+                                                    <div class="alert alert-success" role="alert">
+
+                                                    </div>
+
+                                                    <div class="alert alert-danger" role="alert">
+
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <button type="submit" class="btn btn-submit pull-right">Send message</button>
+                                                </div>
+
+                                            </form>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="clearfix"></div>
+
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <div class="container text-right">
+                    Developed by Grace Klubi and Kevin Osei-Wusu, 2018
+                </div>
+            </div>
+
+        </footer> <!-- main-footer -->
+
+
+<script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDCdXPXLOEWGsmB3RKNy-UExIPFlZgwrzE",
+    authDomain: "kace-vehicle-services2.firebaseapp.com",
+    databaseURL: "https://kace-vehicle-services2.firebaseio.com",
+    projectId: "kace-vehicle-services2",
+    storageBucket: "kace-vehicle-services2.appspot.com",
+    messagingSenderId: "784228930105"
+  };
+  firebase.initializeApp(config);
+</script>
+
+        <script src="../Content/WebPages/js/jquery-1.11.1.min.js"></script>
+
+        <script type="text/javascript">
+        window.onload = function () {
+            initApp();
+        };
+        </script>
+
+        <script src="../Content/WebPages/js/myscript.js"></script>
+
+        
+        <!-- jQuery -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../Content/WebPages/js/jquery-1.11.1.min.js"><\/script>')</script>
+
+        <!-- Bootsrap javascript file -->
+        <script src="../Content/WebPages/js/bootstrap.min.js"></script>
+
+
+        <!-- Template main javascript -->
+        <script src="../Content/WebPages/js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+    </body>
+</html>

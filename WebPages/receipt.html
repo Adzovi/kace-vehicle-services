@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Receipt</title>
+    <link rel="stylesheet" href="../Content/WebPages/css/style1.css" media="all" />
+    <link href="../Content/WebPages/images/icon.ico" rel="shortcut icon" type="image/x-icon" />  
+
+    
+    <style>
+        .mymodal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+    
+    .body{
+        background-color:white;
+        height:200px;
+        text-align:center;
+        margin-right:-20px;
+        margin-left:-20px;
+    }
+    
+    .btn-primary {
+      background: #f05f40;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 25px;
+      border: 1px solid transparent;
+      -moz-transition: all, 0.3s;
+      -o-transition: all, 0.3s;
+      -webkit-transition: all, 0.3s;
+      transition: all, 0.3s;
+      margin-top:20px;
+      margin-left:15px;
+      font-size:larger;
+      color:white;
+      text-align:center;
+    
+    }
+    
+    .btn-primary:hover,
+    .btn-primary:focus{
+          background-color: #fff;
+      color: #f05f40;
+      border: 1px solid #f05f40;
+      cursor:pointer;
+    }
+    
+    .head{
+        height:40px;
+        background:#212529;
+        margin-top:-20px;
+        margin-left:-20px;
+        margin-right:-20px;
+    }
+    
+    /* Modal Content/Box */
+    .mymodal-content {
+      background-color: #fefefe;
+      height:200px;
+      margin: 15% auto; /* 15% from the top and centered */
+      padding: 20px;
+      border: 1px solid black;
+      width: 35%; /* Could be more or less, depending on screen size */
+      animation: ease-in-out;
+    }
+    
+    
+    /* The Close Button */
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      margin-right:20px;
+      margin-left:20px;
+    }
+    
+    .info{
+          color: #aaa;
+      float: left;
+      font-size: 28px;
+      font-weight: bold;
+        margin-right:20px;
+      margin-left:20px;
+    }
+    
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+        </style>
+
+
+  </head>
+  <body id = bod;>
+    <header class="clearfix">
+      <div id="logo">
+        <img src="../Content/WebPages/images/mainlogo.png">
+      </div>
+      <h1>RECEIPT AND PROOF OF REGISTRATION</h1>
+      <div id="company" style="font-size:medium; font-family:'Segoe UI Emoji';" class="clearfix">
+        <div>Kace Vehicle Services</div>
+        <div>KNUST, Kumasi.</div>
+        <div>+233 20 843 9020</div>
+        <div><a href="mailto:koseiwusu1@gmail.com">koseiwusu1@gmail.com</a></div>
+      </div>
+      <div id="project" style="font-size:medium; font-family:'Segoe UI Emoji';">
+        <div><span style="font-size:medium; font-family:'Segoe UI Emoji';">SERVICE: </span> <input style="font-size:medium; font-family:'Segoe UI Emoji'; width: 100%; margin-left: 15px; border:none;" readonly type="text" id="rservice"></div>
+        <div><span style="font-size:medium; font-family:'Segoe UI Emoji';">CLIENT:</span><input style="font-size:medium; font-family:'Segoe UI Emoji'; width: 100%;  margin-left: 15px; border:none;" readonly type="text" id="rclient"></div>
+        <div><span style="font-size:medium; font-family:'Segoe UI Emoji';">ADDRESS:</span><input style="font-size:medium; font-family:'Segoe UI Emoji'; width: 100%; margin-left: 15px; border:none;" readonly type="text" id="raddress"></div>
+        <div><span style="font-size:medium; font-family:'Segoe UI Emoji';">EMAIL:</span> <input style="font-size:medium; font-family:'Segoe UI Emoji'; width: 100%; margin-left: 15px; border:none;" readonly type="text" id="remail" ></div>
+        <div><span style="font-size:medium; font-family:'Segoe UI Emoji';">USER ID:</span> <input style="font-size:medium; font-family:'Segoe UI Emoji'; width: 100%; margin-left: 15px; border:none;" readonly type="text" id="rid" ></div>
+        <div><span style="font-size:medium; font-family:'Segoe UI Emoji';">DATE:</span> <input style="font-size:medium; font-family:'Segoe UI Emoji'; width: 100%; margin-left: 15px; border:none;" readonly type="text" id="rdate" ></div>
+        
+      </div>
+    </header>
+    <main>
+
+            
+        <div id="myModal" class="mymodal">
+
+            <!-- Modal content -->
+            <div class="mymodal-content">
+                <div class="head">
+                    <span class="info">
+                        <input type="text" id="infor" style="border:none; font-size:large;
+width:100%; background:#212529; color: white;" readonly />
+                    </span>
+                    <span class="close">&times;</span>
+                </div>
+                <div align="center" class="body">
+                    <input style="margin-top:50px; margin-bottom:20px; width:100%; text-align:center;
+                   border:none; font-size:large; color: #212529;" id="text" type="text" readonly /><br />
+                    <input class="btn btn-primary" id="close" type="button" value="Continue" />
+                </div>
+            </div>
+
+        </div>
+       
+        <div align="center">
+            <h3 style="font-family:'Segoe UI Emoji'; font-weight:normal; font-size:x-large; margin-top: 50px;">REGISTRATION DETAILS</h3>
+        </div>
+
+        <div align="center">
+      <table style="  font-family:'Segoe UI Emoji'; font-weight:normal; font-size:medium;">
+     
+        <tbody>
+          <tr>
+            <td class="service" style="width: 50%;">Vehicle Brand</td>
+            <td class="desc" style="width: 50%"><input style="font-size:medium; background: none; font-family:'Segoe UI Emoji'; border:none; width:100%" readonly type="text" id="rbrand"></td>
+          </tr>
+          <tr>
+            <td style="width: 50%;" class="service">Vehicle Model</td>
+            <td style="width: 50%;" class="desc"><input style="font-size:medium; background: none; font-family:'Segoe UI Emoji'; border:none; width:100%" readonly type="text" id="rmodel"></td>
+         
+          </tr>
+          <tr>
+            <td class="service">Vehicle Type</td>
+            <td class="desc"><input style="font-size:medium; font-family:'Segoe UI Emoji'; background: none; border:none; width:100%" readonly type="text" id="rtype"></td>
+           
+          </tr>
+          <tr>
+            <td class="service">Vehicle Use</td>
+            <td class="desc"><input id="ruse" style="font-size:medium; font-family:'Segoe UI Emoji'; background: none; border:none; width:100%" readonly type="text" ></td>
+        
+          </tr>
+
+          <tr>
+                <td class="service">Transaction ID</td>
+                <td class="desc"><input id="rtrans" style="font-size:medium; font-family:'Segoe UI Emoji'; background: none; border:none; width:100%" readonly type="text" ></td>
+            
+              </tr>
+
+              <tr>
+                    <td class="service">Amount to be Paid</td>
+                    <td class="desc"><input id="ramount" style="font-size:medium; font-family:'Segoe UI Emoji'; background: none; border:none; width:100%" readonly type="text" ></td>
+                
+                  </tr>
+        </tbody>
+      </table>
+      <div style="margin-top:80px; font-family:'Segoe UI Emoji'; font-weight:normal; font-size:medium;" id="notices">
+        <div>NOTICE:</div>
+        <div style="color:red" class="notice">This document must be presented on the day of collection of your number plate.</div>
+        <div style="color:red" class="notice">We reserve the right to refuse any customer who does not present this document.</div>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary pull-right" id="download" onclick="download()" >Download</button>
+    </div>
+    </div>
+    </main>
+
+
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-functions.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDCdXPXLOEWGsmB3RKNy-UExIPFlZgwrzE",
+        authDomain: "kace-vehicle-services2.firebaseapp.com",
+        databaseURL: "https://kace-vehicle-services2.firebaseio.com",
+        projectId: "kace-vehicle-services2",
+        storageBucket: "kace-vehicle-services2.appspot.com",
+        messagingSenderId: "784228930105"
+    };
+    firebase.initializeApp(config);
+</script>
+
+<script src="../Content/WebPages/js/jquery-1.11.1.min.js"></script>
+<script src="../Content/WebPages/js/myscript3.js"></script>
+<script type="text/javascript">
+  window.onload = function () {
+    loaddata();
+  };
+</script>
+
+
+  </body>
+</html>
